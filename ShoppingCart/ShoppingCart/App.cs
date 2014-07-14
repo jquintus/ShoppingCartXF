@@ -7,8 +7,8 @@ namespace ShoppingCart
 {
     public static class App
     {
-        public static MainViewModel MainViewModel;
-        public static LoginViewModel LoginViewModel;
+        public static MainViewModel MainViewModel { get; set; }
+        public static LoginViewModel LoginViewModel { get; set; }
 
         static App()
         {
