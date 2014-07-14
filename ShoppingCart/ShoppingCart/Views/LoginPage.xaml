@@ -1,7 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:ShoppingCart;assembly=ShoppingCart"
+             BindingContext="{x:Static local:App.LoginViewModel}"
              x:Class="ShoppingCart.Views.LoginPage">
+
   <StackLayout VerticalOptions="Center">
     <Label Text="User name" HorizontalOptions="Start" />
     <Entry Text ="{Binding Username}" Placeholder ="User name goes here" HorizontalOptions="Start" />

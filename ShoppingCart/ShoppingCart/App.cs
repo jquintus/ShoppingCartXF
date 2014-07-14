@@ -5,18 +5,21 @@ using Xamarin.Forms;
 
 namespace ShoppingCart
 {
-    public class App
+    public static class App
     {
+        public static MainViewModel MainViewModel;
+        public static LoginViewModel LoginViewModel;
+
         static App()
         {
             ILoginService login = new LoginService();
             NavigationService navi = new NavigationService();
 
-            MainViewModel mvm = new MainViewModel(navi);
-            LoginViewModel lvm = new LoginViewModel(login, navi);
+            MainViewModel = new MainViewModel(navi);
+            LoginViewModel  = new LoginViewModel(login, navi);
 
-            MainPage = new NavigationPage(new MainPage(mvm));
-            LoginPage = new NavigationPage(new LoginPage(lvm));
+            MainPage = new NavigationPage(new MainPage());
+            LoginPage = new NavigationPage(new LoginPage());
             Page2 = new NavigationPage(new Page2());
 
             navi.Navi = MainPage.Navigation;
@@ -29,4 +32,5 @@ namespace ShoppingCart
 
         public static Page Page2 { get; private set; }
     }
+
 }
