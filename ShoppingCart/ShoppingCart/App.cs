@@ -1,25 +1,32 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
+﻿using ShoppingCart.Services;
+using ShoppingCart.ViewModels;
+using ShoppingCart.Views;
 using Xamarin.Forms;
 
 namespace ShoppingCart
 {
     public class App
     {
-        public static Page GetMainPage()
+        static App()
         {
-            return new ContentPage
-            {
-                Content = new Label
-                {
-                    Text = "Hello, Forms !",
-                    VerticalOptions = LayoutOptions.CenterAndExpand,
-                    HorizontalOptions = LayoutOptions.CenterAndExpand,
-                },
-            };
+            ILoginService login = new LoginService();
+            NavigationService navi = new NavigationService();
+
+            MainViewModel mvm = new MainViewModel(navi);
+            LoginViewModel lvm = new LoginViewModel(login, navi);
+
+            MainPage = new NavigationPage(new MainPage(mvm));
+            LoginPage = new NavigationPage(new LoginPage(lvm));
+            Page2 = new NavigationPage(new Page2());
+
+            navi.Navi = MainPage.Navigation;
+            navi.myPage = MainPage;
         }
+
+        public static Page LoginPage { get; private set; }
+
+        public static Page MainPage { get; private set; }
+
+        public static Page Page2 { get; private set; }
     }
 }

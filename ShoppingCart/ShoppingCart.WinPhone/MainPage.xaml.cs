@@ -1,15 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Navigation;
-using Microsoft.Phone.Controls;
-using Microsoft.Phone.Shell;
+﻿using Microsoft.Phone.Controls;
 
 using Xamarin.Forms;
-
 
 namespace ShoppingCart.WinPhone
 {
@@ -20,7 +11,7 @@ namespace ShoppingCart.WinPhone
             InitializeComponent();
 
             Forms.Init();
-            Content = ShoppingCart.App.GetMainPage().ConvertPageToUIElement(this);
+            Content = ShoppingCart.App.MainPage.ConvertPageToUIElement(this);
         }
     }
 }

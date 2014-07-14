@@ -31,7 +31,7 @@ namespace ShoppingCart.iOS
 
             window = new UIWindow(UIScreen.MainScreen.Bounds);
 
-            window.RootViewController = App.GetMainPage().CreateViewController();
+            window.RootViewController = App.MainPage.CreateViewController();
 
             window.MakeKeyAndVisible();
 
