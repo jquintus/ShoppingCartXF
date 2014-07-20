@@ -4,11 +4,11 @@ using Xamarin.Forms;
 
 namespace ShoppingCart.ViewModels
 {
-    public class MainViewModel
+    public class WelcomeViewModel
     {
         private readonly INavigation _navi;
 
-        public MainViewModel(INavigation navi)
+        public WelcomeViewModel(INavigation navi)
         {
             _navi = navi;
         }

@@ -5,13 +5,30 @@
              BindingContext="{x:Static local:App.LoginViewModel}"
              x:Class="ShoppingCart.Views.LoginPage">
 
-  <StackLayout VerticalOptions="Center">
-    <Label Text="User name" HorizontalOptions="Start" />
-    <Entry Text ="{Binding Username}" Placeholder ="User name goes here" HorizontalOptions="Start" />
+  <StackLayout VerticalOptions="FillAndExpand" Padding="50">
 
-    <Label Text="Password" HorizontalOptions="Start" />
-    <Entry Text ="{Binding Password}" Placeholder ="Password goes here" HorizontalOptions="Start" />
+    <Frame Padding="75">
+      <Label Text="Login" 
+        Font="Bold,Large"
+        TextColor="Yellow"
+        HorizontalOptions="Center" />
+    </Frame>
 
-    <Button Text ="Log In" Command="{Binding LoginCommand}" HorizontalOptions="Center" />
+    <Label Text="User name" 
+      HorizontalOptions="Start" />
+    <Entry Text ="{Binding Username}" 
+      Placeholder ="User name goes here" 
+      HorizontalOptions="FillAndExpand" />
+
+    <Label Text="Password" 
+      HorizontalOptions="Start" />
+    <Entry Text ="{Binding Password}" 
+      Placeholder ="Password goes here" 
+      HorizontalOptions="FillAndExpand" />
+
+    <Button Text ="Log In" 
+      Command="{Binding LoginCommand}" 
+      HorizontalOptions="CenterAndExpand" />
+
   </StackLayout>
 </ContentPage>

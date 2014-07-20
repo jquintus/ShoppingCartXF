@@ -7,7 +7,7 @@ namespace ShoppingCart
 {
     public static class App
     {
-        public static MainViewModel MainViewModel { get; set; }
+        public static WelcomeViewModel WelcomeViewModel { get; set; }
         public static LoginViewModel LoginViewModel { get; set; }
 
         static App()
@@ -15,20 +15,20 @@ namespace ShoppingCart
             ILoginService login = new LoginService();
             NavigationService navi = new NavigationService();
 
-            MainViewModel = new MainViewModel(navi);
+            WelcomeViewModel = new WelcomeViewModel(navi);
             LoginViewModel  = new LoginViewModel(login, navi);
 
-            MainPage = new NavigationPage(new MainPage());
+            WelcomePage = new NavigationPage(new WelcomePage());
             LoginPage = new NavigationPage(new LoginPage());
             Page2 = new NavigationPage(new Page2());
 
-            navi.Navi = MainPage.Navigation;
-            navi.myPage = MainPage;
+            navi.Navi = WelcomePage.Navigation;
+            navi.myPage = WelcomePage;
         }
 
         public static Page LoginPage { get; private set; }
 
-        public static Page MainPage { get; private set; }
+        public static Page WelcomePage { get; private set; }
 
         public static Page Page2 { get; private set; }
     }

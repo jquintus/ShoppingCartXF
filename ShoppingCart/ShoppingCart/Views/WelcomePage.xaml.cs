@@ -2,9 +2,9 @@
 
 namespace ShoppingCart.Views
 {
-    public partial class MainPage : ContentPage
+    public partial class WelcomePage : ContentPage
     {
-        public MainPage()
+        public WelcomePage()
         {
             InitializeComponent();
         }

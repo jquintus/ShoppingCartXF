@@ -14,7 +14,7 @@ namespace ShoppingCart.Droid
 
             Xamarin.Forms.Forms.Init(this, bundle);
 
-            SetPage(App.MainPage);
+            SetPage(App.WelcomePage);
         }
     }
 }

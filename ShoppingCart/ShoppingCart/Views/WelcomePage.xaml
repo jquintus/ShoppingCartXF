@@ -1,14 +1,21 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="ShoppingCart.Views.MainPage"
+             x:Class="ShoppingCart.Views.WelcomePage"
              xmlns:local="clr-namespace:ShoppingCart;assembly=ShoppingCart"
-             BindingContext="{x:Static local:App.MainViewModel}">
+             BindingContext="{x:Static local:App.WelcomeViewModel}">
 
   <StackLayout
     VerticalOptions="Center">
-    <Label Text="Welcome to the main page." HorizontalOptions="Center" />
+    <Frame>
+      <Label Text="Welcome to The Store" Font="Bold, Large" HorizontalOptions="Center" />
+    </Frame>
 
+    <Label Text="Login to start shopping" HorizontalOptions="Center" />
+
+    <Frame>
+      
     <Button Text ="Log In" Command="{Binding GoToLoginPageCommand}" HorizontalOptions="Center" />
+    </Frame>
   </StackLayout>
 </ContentPage>
