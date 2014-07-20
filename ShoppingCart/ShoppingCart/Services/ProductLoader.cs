@@ -811,6 +811,231 @@ namespace ShoppingCart.Services
         'Price': '164.72',
         'ProductCode': 'KM0387Z',
         'Rating': 2
+    },
+    {
+        'Name': 'Yoga:  Choose Your Own Adventure',
+        'Description' : 'An exciting adventure awaits you at every pose.  Watch as the story unfolds as you choose between your favorite yoga positions including Eagle Pose, Childs Pose, Warrior II, and so much more.',
+        'Category': 'Books',
+        'ImageUrl' : 'http://www.womenshealthmag.com/files/wh6_uploads/2014/05/30/childs_pose_425.jpg',
+        'Price' :'14.99',
+        'ProductCode' : 'bk_yoga_4567',
+        'Rating' :'4'
+    },
+    {
+        'Category': 'Books',
+        'Name': 'Pride and Prejudice and Zombies',
+        'Description' : 'This is a book',
+        'Price' :'6.99',
+        'ProductCode' : '343422333',
+        'Rating' :'3'
+    },
+    {
+        'Category': 'Books',
+        'Name': 'Something Wicked This Way Comes ',
+        'Description' : 'This is a book',
+        'Price' :'4.99',
+        'ProductCode' : '343422334',
+        'Rating' :'2'
+    },
+    {
+        'Category': 'Books',
+        'Name': 'The Hitchhikers Guide to the Galaxy',
+        'Description' : 'This is a book',
+        'Price' :'14.99',
+        'ProductCode' : '343422336',
+        'Rating' :'4'
+    },
+    {
+        'Category': 'Books',
+        'Name': 'The Curious Incident of the Dog in the Night-Time ',
+        'Description' : 'This is a book',
+        'Price' :'3.99',
+        'ProductCode' : '343422348',
+        'Rating' :'2'
+    },
+    {
+        'Category': 'Books',
+        'Name': 'The Hollow Chocolate Bunnies of the Apocalypse ',
+        'Description' : 'This is a book',
+        'Price' :'8.99',
+        'ProductCode' : '343422832',
+        'Rating' :'1'
+    },
+    {
+        'Category': 'Books',
+        'Name': 'Eats, Shoots & Leaves: The Zero Tolerance Approach to Punctuation ',
+        'Description' : 'This is a book',
+        'Price' :'7.99',
+        'ProductCode' : '344422332',
+        'Rating' :'1'
+    },
+    {
+        'Category': 'Books',
+        'Name': 'Are You There, Vodka? Its Me, Chelsea ',
+        'Description' : 'This is a book',
+        'Price' :'3.99',
+        'ProductCode' : '243422332',
+        'Rating' :'1'
+    },
+    {
+        'Category': 'Books',
+        'Name': 'The Unbearable Lightness of Being',
+        'Description' : 'This is a book',
+        'Price' :'18.99',
+        'ProductCode' : '343522332',
+        'Rating' :'1'
+    },
+    {
+        'Category': 'Books',
+        'Name': 'Midnight in the Garden of Good and Evil',
+        'Description' : 'This is a book',
+        'Price' :'19.99',
+        'ProductCode' : '393422332',
+        'Rating' :'3'
+    },
+    {
+        'Category': 'Books',
+        'Name': 'The Earth, My Butt, and Other Big Round Things ',
+        'Description' : 'This is a book',
+        'Price' :'2.99',
+        'ProductCode' : '313422332',
+        'Rating' :'2'
+    },
+    {
+        'Category': 'Books',
+        'Name': 'Stop Dressing Your Six-Year-Old Like a Skank: A Slightly Tarnished Southern Belles Words of Wisdom ',
+        'Description' : 'This is a book',
+        'Price' :'28.99',
+        'ProductCode' : '334322332',
+        'Rating' :'1'
+    },
+    {
+        'Category': 'Books',
+        'Name': 'Cloudy With a Chance of Meatballs ',
+        'Description' : 'This is a book',
+        'Price' :'4.99',
+        'ProductCode' : '949422332',
+        'Rating' :'3'
+    },
+    {
+        'Category': 'Books',
+        'Name': 'The Perks of Being a Wallflower ',
+        'Description' : 'This is a book',
+        'Price' :'5.99',
+        'ProductCode' : '343417998',
+        'Rating' :'2'
+    },
+    {
+        'Category': 'Books',
+        'Name': 'The Long Dark Tea-Time of the Soul',
+        'Description' : 'This is a book',
+        'Price' :'9.99',
+        'ProductCode' : '343424675',
+        'Rating' :'2'
+    },
+    {
+        'Category': 'Books',
+        'Name': 'An Arsonists Guide To Writers Homes In New England ',
+        'Description' : 'This is a book',
+        'Price' :'8.99',
+        'ProductCode' : '343454755',
+        'Rating' :'5'
+    },
+    {
+        'Category': 'Books',
+        'Name': 'A Heartbreaking Work of Staggering Genius ',
+        'Description' : 'This is a book',
+        'Price' :'48.99',
+        'ProductCode' : '343654655',
+        'Rating' :'1'
+    },
+    {
+        'Category': 'Books',
+        'Name': 'Alexander and the Terrible, Horrible, No Good, Very Bad Day ',
+        'Description' : 'This is a book',
+        'Price' :'4.99',
+        'ProductCode' : '343886978',
+        'Rating' :'5'
+    },
+    {
+        'Category': 'Books',
+        'Name': 'John Dies at the End',
+        'Description' : 'This is a book',
+        'Price' :'3.99',
+        'ProductCode' : '344816270',
+        'Rating' :'4'
+    },
+    {
+        'Category': 'Books',
+        'Name': 'The Gordonston Ladies Dog Walking Club ',
+        'Description' : 'This is a book',
+        'Price' :'6.99',
+        'ProductCode' : '348998084',
+        'Rating' :'1'
+    },
+    {
+        'Category': 'Books',
+        'Name': 'The Zombie Survival Guide: Complete Protection from the Living Dead ',
+        'Description' : 'This is a book',
+        'Price' :'5.99',
+        'ProductCode' : '358523327',
+        'Rating' :'4'
+    },
+    {
+        'Category': 'Books',
+        'Name': 'So Long, and Thanks for All the Fish',
+        'Description' : 'This is a book',
+        'Price' :'4.99',
+        'ProductCode' : '361311403',
+        'Rating' :'4'
+    },
+    {
+        'Category': 'Books',
+        'Name': 'I Still Miss My Man But My Aim Is Getting Better ',
+        'Description' : 'This is a book',
+        'Price' :'2.99',
+        'ProductCode' : '343507180',
+        'Rating' :'1'
+    },
+    {
+        'Category': 'Books',
+        'Name': 'When You Are Engulfed in Flames ',
+        'Description' : 'This is a book',
+        'Price' :'1.99',
+        'ProductCode' : '343846572',
+        'Rating' :'4'
+    },
+    {
+        'Category': 'Books',
+        'Name': 'Extremely Loud and Incredibly Close ',
+        'Description' : 'This is a book',
+        'Price' :'34.99',
+        'ProductCode' : '346392012',
+        'Rating' :'2'
+    },
+    {
+        'Category': 'Books',
+        'Name': 'The Devil Wears Prada',
+        'Description' : 'This is a book',
+        'Price' :'5.99',
+        'ProductCode' : '388766866',
+        'Rating' :'2'
+    },
+    {
+        'Category': 'Books',
+        'Name': 'The Guernsey Literary and Potato Peel Pie Society ',
+        'Description' : 'This is a book',
+        'Price' :'23.99',
+        'ProductCode' : '1386346614',
+        'Rating' :'2'
+    },
+    {
+        'Category': 'Books',
+        'Name': 'I Have No Mouth and I Must Scream ',
+        'Description' : 'This is a book',
+        'Price' :'5.99',
+        'ProductCode' : '932901274',
+        'Rating' :'2'
     }
 ]";
 
@@ -819,49 +1044,8 @@ namespace ShoppingCart.Services
         public async Task<List<Item>> LoadProducts()
         {
             var items = JsonConvert.DeserializeObject<List<Item>>(JSON_DATA);
-            var books = LoadBooks();
-
-            var all = items.Concat(books).ToList();
-
-            return await Task.FromResult(all);
+            return await Task.FromResult(items);
         }
 
-        private List<Item> LoadBooks()
-        {
-            string bookUrl = @"http://ecx.images-amazon.com/images/I/51B5ocuBH8L.jpg";
-            var books = new List<Item>()
-            {
-                new Item{ Category = "Books", Name = "Yoga:  Choose Your Own Adventure", Description = "An exciting adventure awaits you at every pose.  Watch as the story unfolds as you choose between your favorite yoga positions including Eagle Pose, Child's Pose, Warrior II, and so much more.", ImageUrl = @"http://www.womenshealthmag.com/files/wh6_uploads/2014/05/30/childs_pose_425.jpg", Price = 14.99, ProductCode = "bk_yoga_4567", Rating = 4, },
-                new Item{ Category = "Books", Name = "Pride and Prejudice and Zombies", Description = "This is a book", ImageUrl = bookUrl, Price = 6.99, ProductCode = "343422333", Rating = 3, },
-                new Item{ Category = "Books", Name = "Something Wicked This Way Comes ", Description = "This is a book", ImageUrl = bookUrl, Price = 4.99, ProductCode = "343422334", Rating = 2, },
-                new Item{ Category = "Books", Name = "The Hitchhiker's Guide to the Galaxy", Description = "This is a book", ImageUrl = bookUrl, Price = 14.99, ProductCode = "343422336", Rating = 4, },
-                new Item{ Category = "Books", Name = "The Curious Incident of the Dog in the Night-Time ", Description = "This is a book", ImageUrl = bookUrl, Price = 3.99, ProductCode = "343422348", Rating = 2, },
-                new Item{ Category = "Books", Name = "The Hollow Chocolate Bunnies of the Apocalypse ", Description = "This is a book", ImageUrl = bookUrl, Price = 8.99, ProductCode = "343422832", Rating = 1, },
-                new Item{ Category = "Books", Name = "Eats, Shoots & Leaves: The Zero Tolerance Approach to Punctuation ", Description = "This is a book", ImageUrl = bookUrl, Price = 7.99, ProductCode = "344422332", Rating = 1, },
-                new Item{ Category = "Books", Name = "Are You There, Vodka? It's Me, Chelsea ", Description = "This is a book", ImageUrl = bookUrl, Price = 3.99, ProductCode = "243422332", Rating = 1, },
-                new Item{ Category = "Books", Name = "The Unbearable Lightness of Being ", Description = "This is a book", ImageUrl = bookUrl, Price = 18.99, ProductCode = "343522332", Rating = 1, },
-                new Item{ Category = "Books", Name = "Midnight in the Garden of Good and Evil ", Description = "This is a book", ImageUrl = bookUrl, Price = 19.99, ProductCode = "393422332", Rating = 3, },
-                new Item{ Category = "Books", Name = "The Earth, My Butt, and Other Big Round Things ", Description = "This is a book", ImageUrl = bookUrl, Price = 2.99, ProductCode = "313422332", Rating = 2, },
-                new Item{ Category = "Books", Name = "Stop Dressing Your Six-Year-Old Like a Skank: A Slightly Tarnished Southern Belle's Words of Wisdom ", Description = "This is a book", ImageUrl = bookUrl, Price = 28.99, ProductCode = "334322332", Rating = 1, },
-                new Item{ Category = "Books", Name = "Cloudy With a Chance of Meatballs ", Description = "This is a book", ImageUrl = bookUrl, Price = 4.99, ProductCode = "949422332", Rating = 3, },
-                new Item{ Category = "Books", Name = "The Perks of Being a Wallflower ", Description = "This is a book", ImageUrl = bookUrl, Price = 5.99, ProductCode = "343417998", Rating = 2, },
-                new Item{ Category = "Books", Name = "The Long Dark Tea-Time of the Soul", Description = "This is a book", ImageUrl = bookUrl, Price = 9.99, ProductCode = "343424675", Rating = 2, },
-                new Item{ Category = "Books", Name = "An Arsonist's Guide To Writers' Homes In New England ", Description = "This is a book", ImageUrl = bookUrl, Price = 8.99, ProductCode = "343454755", Rating = 5, },
-                new Item{ Category = "Books", Name = "A Heartbreaking Work of Staggering Genius ", Description = "This is a book", ImageUrl = bookUrl, Price = 48.99, ProductCode = "343654655", Rating = 1, },
-                new Item{ Category = "Books", Name = "Alexander and the Terrible, Horrible, No Good, Very Bad Day ", Description = "This is a book", ImageUrl = bookUrl, Price = 4.99, ProductCode = "343886978", Rating = 5, },
-                new Item{ Category = "Books", Name = "John Dies at the End", Description = "This is a book", ImageUrl = bookUrl, Price = 3.99, ProductCode = "344816270", Rating = 4, },
-                new Item{ Category = "Books", Name = "The Gordonston Ladies Dog Walking Club ", Description = "This is a book", ImageUrl = bookUrl, Price = 6.99, ProductCode = "348998084", Rating = 1, },
-                new Item{ Category = "Books", Name = "The Zombie Survival Guide: Complete Protection from the Living Dead ", Description = "This is a book", ImageUrl = bookUrl, Price = 5.99, ProductCode = "358523327", Rating = 4, },
-                new Item{ Category = "Books", Name = "So Long, and Thanks for All the Fish", Description = "This is a book", ImageUrl = bookUrl, Price = 4.99, ProductCode = "361311403", Rating = 4, },
-                new Item{ Category = "Books", Name = "I Still Miss My Man But My Aim Is Getting Better ", Description = "This is a book", ImageUrl = bookUrl, Price = 2.99, ProductCode = "343507180", Rating = 1, },
-                new Item{ Category = "Books", Name = "When You Are Engulfed in Flames ", Description = "This is a book", ImageUrl = bookUrl, Price = 1.99, ProductCode = "343846572", Rating = 4, },
-                new Item{ Category = "Books", Name = "Extremely Loud and Incredibly Close ", Description = "This is a book", ImageUrl = bookUrl, Price = 34.99, ProductCode = "346392012", Rating = 2, },
-                new Item{ Category = "Books", Name = "The Devil Wears Prada", Description = "This is a book", ImageUrl = bookUrl, Price = 5.99, ProductCode = "388766866", Rating = 2, },
-                new Item{ Category = "Books", Name = "The Guernsey Literary and Potato Peel Pie Society ", Description = "This is a book", ImageUrl = bookUrl, Price = 23.99, ProductCode = "1386346614", Rating = 2, },
-                new Item{ Category = "Books", Name = "I Have No Mouth and I Must Scream ", Description = "This is a book", ImageUrl = bookUrl, Price = 5.99, ProductCode = "932901274", Rating = 2, },
-            };
-
-            return books;
-        }
     }
 }
