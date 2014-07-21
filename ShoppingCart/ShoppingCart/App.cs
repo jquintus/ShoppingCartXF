@@ -1,6 +1,8 @@
-﻿using ShoppingCart.Services;
+﻿using ShoppingCart.Models;
+using ShoppingCart.Services;
 using ShoppingCart.ViewModels;
 using ShoppingCart.Views;
+using System.Collections.Generic;
 using Xamarin.Forms;
 
 namespace ShoppingCart
@@ -10,7 +12,7 @@ namespace ShoppingCart
         public static WelcomeViewModel WelcomeViewModel { get; set; }
         public static LoginViewModel LoginViewModel { get; set; }
 
-        public static ProductListViewModel ProductListViewModel { get; set; }
+        public static CategoriesListViewModel CategoriesListViewModel { get; set; }
 
         static App()
         {
@@ -23,14 +25,14 @@ namespace ShoppingCart
             // View Models
             WelcomeViewModel = new WelcomeViewModel(navi);
             LoginViewModel = new LoginViewModel(login, navi);
-            ProductListViewModel = new ProductListViewModel(products);
+            CategoriesListViewModel = new CategoriesListViewModel(products, navi);
 
             // Pages
             WelcomePage = new NavigationPage(new WelcomePage());
             LoginPage = new NavigationPage(new LoginPage());
             Page2 = new NavigationPage(new Page2());
-            ProductListPage = new NavigationPage(new ProductListPage());
-            WelcomePage = ProductListPage;
+            CategoriesListPage = new NavigationPage(new CategoriesListPage());
+            WelcomePage = CategoriesListPage;
 
             // Navi
             navi.Navi = WelcomePage.Navigation;
@@ -43,7 +45,12 @@ namespace ShoppingCart
 
         public static Page Page2 { get; private set; }
 
-        public static Page ProductListPage { get; set; }
+        public static Page CategoriesListPage { get; set; }
+
+        public static Page GetProductsListPage(List<Item> items)
+        {
+            return null;
+        }
     }
 
 }

@@ -36,7 +36,7 @@ namespace ShoppingCart.ViewModels
             if (result)
             {
                 //await _navigationService.PopAsync();
-                await _navigationService.PushAsync(App.ProductListPage);
+                await _navigationService.PushAsync(App.CategoriesListPage);
             }
             else
             {

@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="ShoppingCart.Views.ProductListPage"
+             x:Class="ShoppingCart.Views.CategoriesListPage"
              xmlns:local="clr-namespace:ShoppingCart;assembly=ShoppingCart"
-             BindingContext="{x:Static local:App.ProductListViewModel}">
+             BindingContext="{x:Static local:App.CategoriesListViewModel}">
 
   <StackLayout VerticalOptions="FillAndExpand" Padding="50">
     <Frame>
@@ -12,7 +12,7 @@
         Font="Bold,Large" />
     </Frame>
 
-    <ListView ItemsSource="{Binding Categories.Result}" IsGroupingEnabled="false">
+    <ListView ItemsSource="{Binding Categories.Result}" IsGroupingEnabled="false" ItemSelected="OnItemSelected">
 
       <!-->
       <ListView.GroupHeaderTemplate>
