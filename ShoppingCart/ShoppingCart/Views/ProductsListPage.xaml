@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ShoppingCart.Views.ProductsListPage"
+             xmlns:local="clr-namespace:ShoppingCart;assembly=ShoppingCart"
+             BindingContext="{x:Static local:App.ProductsListViewModel}">
+
+  <StackLayout VerticalOptions="FillAndExpand" Padding="50">
+    <Frame>
+      <Label Text="{Binding Title, Mode=TwoWay}"
+        HorizontalOptions="Center"
+        Font="Bold,Large" />
+    </Frame>
+
+    <Entry Text="{Binding Title, Mode=TwoWay}"
+  HorizontalOptions="Center"
+ />
+
+    <ListView ItemsSource="{Binding Products}" ItemSelected="OnItemSelected">
+
+      <ListView.ItemTemplate>
+        <DataTemplate>
+
+          <ViewCell>
+            <Label Text="{Binding Name}" YAlign="Center" Font="Medium" />
+          </ViewCell>
+
+        </DataTemplate>
+      </ListView.ItemTemplate>
+
+    </ListView>
+
+    <Button Text  ="Bar" Command ="{Binding Update}"/>
+  </StackLayout>
+</ContentPage>

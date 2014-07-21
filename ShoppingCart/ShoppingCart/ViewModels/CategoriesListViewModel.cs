@@ -28,7 +28,8 @@ namespace ShoppingCart.ViewModels
 
                 if (items != null && items.Any())
                 {
-                    await _navi.PushAsync(App.GetProductsListPage(items));
+                    var page = App.GetProductsListPage(items, cat);
+                    await _navi.PushAsync(page);
                 }
                 else
                 {

@@ -1,19 +1,20 @@
-﻿using ShoppingCart.ViewModels;
+﻿using ShoppingCart.Models;
+using ShoppingCart.ViewModels;
 using Xamarin.Forms;
 
 namespace ShoppingCart.Views
 {
-    public partial class CategoriesListPage
+    public partial class ProductsListPage
     {
-        public CategoriesListPage()
+        public ProductsListPage()
         {
             InitializeComponent();
         }
 
         private void OnItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
-            var param = e.SelectedItem as string;
-            var command = ((CategoriesListViewModel)BindingContext).NavigateToCategory;
+            var param = e.SelectedItem as Item;
+            var command = ((ProductsListViewModel)BindingContext).NavigateToProduct;
 
             if (command.CanExecute(param))
             {
