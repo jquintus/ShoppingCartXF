@@ -7,13 +7,15 @@ using System.Threading.Tasks;
 
 namespace ShoppingCart.Services
 {
-    public class ProductService
+    public class ProductService : IProductService
     {
         private readonly AsyncLazy<List<Item>> _itemsAsync;
+        private readonly IProductLoader _loader;
 
-        public ProductService()
+        public ProductService(IProductLoader loader)
         {
-            _itemsAsync = new AsyncLazy<List<Item>>(async () => await LoadItems());
+            _loader = loader;
+            _itemsAsync = new AsyncLazy<List<Item>>(async () => await _loader.LoadProducts());
         }
 
         public async Task<List<string>> GetCategories()
@@ -27,7 +29,12 @@ namespace ShoppingCart.Services
             return cats;
         }
 
-        public async Task<List<Item>> GetItemsForCategory(string category)
+        public async Task<List<Item>> GetProducts()
+        {
+            return await _itemsAsync;
+        }
+
+        public async Task<List<Item>> GetProductsForCategory(string category)
         {
             var items = await _itemsAsync;
             var filterd = items.Where(i => string.Equals(category, i.Category, StringComparison.CurrentCultureIgnoreCase))
@@ -36,9 +43,13 @@ namespace ShoppingCart.Services
             return filterd;
         }
 
-        private Task<List<Item>> LoadItems()
+        public async Task<List<Item>> Search(string searchString)
         {
-            throw new NotImplementedException();
+            var items = await _itemsAsync;
+
+            if (string.IsNullOrWhiteSpace(searchString)) return items;
+
+            return new List<Item>();
         }
     }
 }

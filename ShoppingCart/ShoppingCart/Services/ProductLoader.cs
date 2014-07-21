@@ -1,12 +1,11 @@
 ﻿using Newtonsoft.Json;
 using ShoppingCart.Models;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace ShoppingCart.Services
 {
-    public class ProductLoader
+    public class ProductLoader : IProductLoader
     {
         #region public const string JSON_DATA = "..."
 
@@ -1046,6 +1045,5 @@ namespace ShoppingCart.Services
             var items = JsonConvert.DeserializeObject<List<Item>>(JSON_DATA);
             return await Task.FromResult(items);
         }
-
     }
 }

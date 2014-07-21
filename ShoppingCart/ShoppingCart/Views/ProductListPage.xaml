@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ShoppingCart.Views.ProductListPage"
+             xmlns:local="clr-namespace:ShoppingCart;assembly=ShoppingCart"
+             BindingContext="{x:Static local:App.ProductListViewModel}">
+
+  <StackLayout VerticalOptions="FillAndExpand" Padding="50">
+    <Frame>
+      <Label Text="Categories"
+        HorizontalOptions="Center"
+        Font="Bold,Large" />
+    </Frame>
+
+    <ListView ItemsSource="{Binding Categories.Result}" IsGroupingEnabled="false">
+
+      <!-->
+      <ListView.GroupHeaderTemplate>
+        <DataTemplate>
+          <ViewCell>
+            <StackLayout Padding="5,0,0,0" VerticalOptions="StartAndExpand" Orientation="Vertical">
+              <Label Text="{Binding Title}" YAlign="Center" />
+            </StackLayout>
+          </ViewCell>
+        </DataTemplate>
+      </ListView.GroupHeaderTemplate>
+      <!-->
+
+      <ListView.ItemTemplate>
+        <DataTemplate>
+
+          <ViewCell>
+            <Label Text="{Binding .}" BackgroundColor = "Red" YAlign="Center" Font="Medium" />
+          </ViewCell>
+
+        </DataTemplate>
+      </ListView.ItemTemplate>
+
+    </ListView>
+  </StackLayout>
+</ContentPage>
