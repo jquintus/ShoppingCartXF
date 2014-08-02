@@ -2,7 +2,7 @@ Sample code for a shopping cart app using Xamarin Forms.  There is a series of b
 
  1. Day 0:  Getting Started ([blog][1] / [code][2]) 
  2. Day 1:  Binding and Navigation ([blog][3] / [code][4])
- 3. Day 2:  TBD ([blog][5] / [code][6])
+ 3. Day 2:  TBD (blog / [code][6])
 
 
   [1]: http://blog.masterdevs.com/xamarin-forms-shopping-cart-day-0/
