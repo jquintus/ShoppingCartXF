@@ -27,10 +27,7 @@ namespace ShoppingCart
             // Pages
             WelcomePage = new NavigationPage(new WelcomePage());
             LoginPage = new NavigationPage(new LoginPage());
-            Page2 = new NavigationPage(new Page2());
             CategoriesListPage = new NavigationPage(new CategoriesListPage());
-            ProductPage = new NavigationPage(new ProductPage());
-            ProductsListPage = new NavigationPage(new ProductsListPage());
 
             // Startup Page
             WelcomePage = CategoriesListPage;
@@ -47,12 +44,6 @@ namespace ShoppingCart
         public static Page LoginPage { get; private set; }
 
         public static LoginViewModel LoginViewModel { get; set; }
-
-        public static Page Page2 { get; private set; }
-
-        public static Page ProductPage { get; private set; }
-
-        public static Page ProductsListPage { get; private set; }
 
         public static ProductsListViewModel ProductsListViewModel { get; set; }
 

@@ -12,10 +12,6 @@
         Font="Bold,Large" />
     </Frame>
 
-    <Entry Text="{Binding Title, Mode=TwoWay}"
-  HorizontalOptions="Center"
- />
-
     <ListView ItemsSource="{Binding Products}" ItemSelected="OnItemSelected">
 
       <ListView.ItemTemplate>
@@ -24,12 +20,9 @@
           <ViewCell>
             <Label Text="{Binding Name}" YAlign="Center" Font="Medium" />
           </ViewCell>
-
         </DataTemplate>
       </ListView.ItemTemplate>
-
     </ListView>
 
-    <Button Text  ="Bar" Command ="{Binding Update}"/>
   </StackLayout>
 </ContentPage>
