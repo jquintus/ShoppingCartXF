@@ -18,7 +18,13 @@
         <DataTemplate>
 
           <ViewCell>
-            <Label Text="{Binding Name}" YAlign="Center" Font="Medium" />
+            <StackLayout VerticalOptions="FillAndExpand" Orientation="Horizontal" Padding="10">
+              <Image Aspect="AspectFill"
+                     HeightRequest ="75" WidthRequest="75"
+                     Source="{Binding IconUrl}" />
+
+              <Label Text="{Binding Name}" YAlign="Center" Font="Large" />
+            </StackLayout>
           </ViewCell>
         </DataTemplate>
       </ListView.ItemTemplate>

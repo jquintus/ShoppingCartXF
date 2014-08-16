@@ -4,11 +4,15 @@
              x:Class="ShoppingCart.Views.ProductPage"
              xmlns:local="clr-namespace:ShoppingCart;assembly=ShoppingCart"
              BindingContext="{x:Static local:App.ProductViewModel}">
-
-  <StackLayout VerticalOptions="FillAndExpand" Padding="50">
+  <ScrollView>
+    <StackLayout VerticalOptions="FillAndExpand" Padding="50">
       <Label Text="{Binding Product.Name}"
         HorizontalOptions="Center"
         Font="Bold,Large" />
+
+      <Image Aspect="AspectFill"
+             HorizontalOptions="FillAndExpand"
+             Source="{Binding Product.ImageUrl}" />
 
       <Label Text="{Binding Product.Description}"
         HorizontalOptions="Start"
@@ -17,6 +21,6 @@
       <Label Text="{Binding Product.Price, StringFormat='{0:c}'}"
         HorizontalOptions="Start"
         Font="Bold,Medium" />
-
-  </StackLayout>
+    </StackLayout>
+  </ScrollView>
 </ContentPage>
