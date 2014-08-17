@@ -4,7 +4,7 @@ using System.Runtime.CompilerServices;
 
 namespace ShoppingCart.ViewModels
 {
-    public abstract class BaseViewModel
+    public abstract class BaseViewModel : INotifyPropertyChanged
     {
         private readonly Dictionary<string, object> PropertyValues = new Dictionary<string, object>();
 
