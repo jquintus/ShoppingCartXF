@@ -2,7 +2,7 @@
 using System.ComponentModel;
 using System.Threading.Tasks;
 
-namespace ShoppingCart.ViewModels
+namespace ShoppingCart.Async
 {
     /// <summary>
     /// http://msdn.microsoft.com/en-us/magazine/dn605875.aspx
@@ -10,22 +10,44 @@ namespace ShoppingCart.ViewModels
     /// <typeparam name="TResult"></typeparam>
     public sealed class NotifyTaskCompletion<TResult> : INotifyPropertyChanged
     {
+        private readonly TResult _defaultResult;
         public NotifyTaskCompletion(Task<TResult> task)
+            : this(task, default(TResult))
         {
+
+        }
+        public NotifyTaskCompletion(Task<TResult> task, TResult defaultResult)
+        {
+            _defaultResult = defaultResult;
             Task = task;
             if (!task.IsCompleted)
             {
                 var _ = WatchTaskAsync(task);
             }
         }
+     
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        public string ErrorMessage { get { return (InnerException == null) ? null : InnerException.Message; } }
+        public string ErrorMessage
+        {
+            get
+            {
+                return (InnerException == null) ?
+                    null : InnerException.Message;
+            }
+        }
 
         public AggregateException Exception { get { return Task.Exception; } }
 
-        public Exception InnerException { get { return (Exception == null) ? null : Exception.InnerException; } }
+        public Exception InnerException
+        {
+            get
+            {
+                return (Exception == null) ?
+                    null : Exception.InnerException;
+            }
+        }
 
         public bool IsCanceled { get { return Task.IsCanceled; } }
 
@@ -37,7 +59,15 @@ namespace ShoppingCart.ViewModels
 
         public bool IsSuccessfullyCompleted { get { return Task.Status == TaskStatus.RanToCompletion; } }
 
-        public TResult Result { get { return (Task.Status == TaskStatus.RanToCompletion) ? Task.Result : default(TResult); } }
+        public TResult Result
+        {
+            get
+            {
+                return (Task.Status == TaskStatus.RanToCompletion)
+                  ? Task.Result
+                  : _defaultResult;
+            }
+        }
 
         public TaskStatus Status { get { return Task.Status; } }
 
@@ -49,10 +79,11 @@ namespace ShoppingCart.ViewModels
             {
                 await task;
             }
-            catch { }
+            catch
+            { }
 
             var propertyChanged = PropertyChanged;
-            if (null != propertyChanged)
+            if (propertyChanged != null)
             {
                 propertyChanged(this, new PropertyChangedEventArgs("Status"));
                 propertyChanged(this, new PropertyChangedEventArgs("IsCompleted"));
@@ -66,8 +97,7 @@ namespace ShoppingCart.ViewModels
                 {
                     propertyChanged(this, new PropertyChangedEventArgs("IsFaulted"));
                     propertyChanged(this, new PropertyChangedEventArgs("Exception"));
-                    propertyChanged(this,
-                      new PropertyChangedEventArgs("InnerException"));
+                    propertyChanged(this, new PropertyChangedEventArgs("InnerException"));
                     propertyChanged(this, new PropertyChangedEventArgs("ErrorMessage"));
                 }
                 else

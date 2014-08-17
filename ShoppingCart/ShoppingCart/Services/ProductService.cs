@@ -9,13 +9,13 @@ namespace ShoppingCart.Services
 {
     public class ProductService : IProductService
     {
-        private readonly AsyncLazy<List<Item>> _itemsAsync;
+        private readonly AsyncLazy<List<Product>> _itemsAsync;
         private readonly IProductLoader _loader;
 
         public ProductService(IProductLoader loader)
         {
             _loader = loader;
-            _itemsAsync = new AsyncLazy<List<Item>>(async () => await _loader.LoadProducts());
+            _itemsAsync = new AsyncLazy<List<Product>>(async () => await _loader.LoadProducts());
         }
 
         public async Task<List<string>> GetCategories()
@@ -29,12 +29,12 @@ namespace ShoppingCart.Services
             return cats;
         }
 
-        public async Task<List<Item>> GetProducts()
+        public async Task<List<Product>> GetProducts()
         {
             return await _itemsAsync;
         }
 
-        public async Task<List<Item>> GetProductsForCategory(string category)
+        public async Task<List<Product>> GetProductsForCategory(string category)
         {
             var items = await _itemsAsync;
             var filterd = items.Where(i => string.Equals(category, i.Category, StringComparison.CurrentCultureIgnoreCase))
@@ -43,13 +43,13 @@ namespace ShoppingCart.Services
             return filterd;
         }
 
-        public async Task<List<Item>> Search(string searchString)
+        public async Task<List<Product>> Search(string searchString)
         {
             var items = await _itemsAsync;
 
             if (string.IsNullOrWhiteSpace(searchString)) return items;
 
-            return new List<Item>();
+            return new List<Product>();
         }
     }
 }

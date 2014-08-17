@@ -3,26 +3,28 @@ using ShoppingCart.Services;
 using ShoppingCart.ViewModels;
 using ShoppingCart.Views;
 using System.Collections.Generic;
+using System.Linq;
 using Xamarin.Forms;
 
 namespace ShoppingCart
 {
     public static class App
     {
+        private static NavigationService NaviService;
+
         static App()
         {
             // Services
             ILoginService login = new LoginService();
             IProductLoader loader = new ProductLoader();
             IProductService products = new ProductService(loader);
-            NavigationService navi = new NavigationService();
+            NaviService = new NavigationService();
 
             // View Models
-            WelcomeViewModel = new WelcomeViewModel(navi);
-            LoginViewModel = new LoginViewModel(login, navi);
-            CategoriesListViewModel = new CategoriesListViewModel(products, navi);
-            ProductViewModel = new ProductViewModel(navi);
-            ProductsListViewModel = new ProductsListViewModel(navi);
+            WelcomeViewModel = new WelcomeViewModel(NaviService);
+            LoginViewModel = new LoginViewModel(login, NaviService);
+            CategoriesListViewModel = new CategoriesListViewModel(products, NaviService);
+            ProductsListViewModel = new ProductsListViewModel(NaviService);
 
             // Pages
             WelcomePage = new NavigationPage(new WelcomePage());
@@ -33,8 +35,8 @@ namespace ShoppingCart
             WelcomePage = CategoriesListPage;
 
             // Navi
-            navi.Navi = WelcomePage.Navigation;
-            navi.myPage = WelcomePage;
+            NaviService.Navi = WelcomePage.Navigation;
+            NaviService.myPage = WelcomePage;
         }
 
         public static Page CategoriesListPage { get; set; }
@@ -53,17 +55,17 @@ namespace ShoppingCart
 
         public static WelcomeViewModel WelcomeViewModel { get; set; }
 
-        public static Page GetProductPage(Item item)
+        public static Page GetProductPage(ProductViewModel productViewModel)
         {
-            ProductViewModel.Product = item;
+            ProductViewModel = productViewModel;
             return new NavigationPage(new ProductPage());
         }
 
-        public static Page GetProductsListPage(List<Item> items, string title)
+        public static Page GetProductsListPage(List<Product> products, string title)
         {
             if (string.IsNullOrWhiteSpace(title)) title = "Products";
 
-            ProductsListViewModel.Products = items;
+            ProductsListViewModel.Products = products.Select(p => new ProductViewModel(NaviService, p)).ToList();
             ProductsListViewModel.Title = title;
             return new NavigationPage(new ProductsListPage());
         }

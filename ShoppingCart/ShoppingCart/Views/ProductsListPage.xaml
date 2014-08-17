@@ -21,9 +21,9 @@
             <StackLayout VerticalOptions="FillAndExpand" Orientation="Horizontal" Padding="10">
               <Image Aspect="AspectFill"
                      HeightRequest ="75" WidthRequest="75"
-                     Source="{Binding IconUrl}" />
+                     Source="{Binding IconSource.Result}" />
 
-              <Label Text="{Binding Name}" YAlign="Center" Font="Large" />
+              <Label Text="{Binding Product.Name}" YAlign="Center" Font="Large" />
             </StackLayout>
           </ViewCell>
         </DataTemplate>

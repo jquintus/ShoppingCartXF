@@ -1,4 +1,5 @@
 ﻿using GalaSoft.MvvmLight.Command;
+using ShoppingCart.Async;
 using ShoppingCart.Models;
 using ShoppingCart.Services;
 using System.Collections.Generic;
@@ -17,7 +18,7 @@ namespace ShoppingCart.ViewModels
             _service = service;
             _navi = navi;
 
-            Items = new NotifyTaskCompletion<List<Item>>(_service.GetProducts());
+            Items = new NotifyTaskCompletion<List<Product>>(_service.GetProducts());
             Categories = new NotifyTaskCompletion<List<string>>(_service.GetCategories());
 
             NavigateToCategory = new RelayCommand<string>(async cat =>
@@ -40,7 +41,7 @@ namespace ShoppingCart.ViewModels
 
         public NotifyTaskCompletion<List<string>> Categories { get; private set; }
 
-        public NotifyTaskCompletion<List<Item>> Items { get; private set; }
+        public NotifyTaskCompletion<List<Product>> Items { get; private set; }
 
         public ICommand NavigateToCategory { get; private set; }
     }

@@ -15,7 +15,7 @@ namespace ShoppingCart.ViewModels
             _navi = navi;
             Title = "Products Page";
 
-            NavigateToProduct = new RelayCommand<Item>(async item =>
+            NavigateToProduct = new RelayCommand<ProductViewModel>(async item =>
                 {
                     var page = App.GetProductPage(item);
                     await _navi.PushAsync(page);
@@ -25,9 +25,9 @@ namespace ShoppingCart.ViewModels
 
         public ICommand NavigateToProduct { get; private set; }
 
-        public List<Item> Products
+        public List<ProductViewModel> Products
         {
-            get { return GetValue<List<Item>>(); }
+            get { return GetValue<List<ProductViewModel>>(); }
             set { SetValue(value); }
         }
 

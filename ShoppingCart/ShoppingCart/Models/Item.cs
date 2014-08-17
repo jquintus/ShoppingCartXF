@@ -2,7 +2,7 @@
 
 namespace ShoppingCart.Models
 {
-    public class Item
+    public class Product
     {
         public string Category { get; set; }
 

@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
 using ShoppingCart.Models;
 using System.Collections.Generic;
+using Humanizer;
 using System.Threading.Tasks;
 
 namespace ShoppingCart.Services
@@ -1438,9 +1439,9 @@ namespace ShoppingCart.Services
 
         #endregion private Queue<string> ImgurIds = new ...
 
-        public async Task<List<Item>> LoadProducts()
+        public async Task<List<Product>> LoadProducts()
         {
-            var items = JsonConvert.DeserializeObject<List<Item>>(JSON_DATA);
+            var items = JsonConvert.DeserializeObject<List<Product>>(JSON_DATA);
             foreach (var item in items)
             {
                 UpdateItem(item, ImgurIds.Dequeue());
@@ -1448,10 +1449,13 @@ namespace ShoppingCart.Services
             return await Task.FromResult(items);
         }
 
-        private static void UpdateItem(Item item, string imgurId)
+        private static void UpdateItem(Product item, string imgurId)
         {
             item.ImageUrl = string.Format("http://i.imgur.com/{0}.jpg", imgurId);
             item.IconUrl = string.Format("http://i.imgur.com/{0}s.jpg", imgurId);
+
+            item.Name = item.Name.Titleize().Replace(".", string.Empty);
+            item.Description = item.Description.Humanize(LetterCasing.Sentence);
         }
     }
 }

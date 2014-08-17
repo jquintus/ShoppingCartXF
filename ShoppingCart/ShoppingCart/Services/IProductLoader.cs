@@ -6,6 +6,6 @@ namespace ShoppingCart.Services
 {
     public interface IProductLoader
     {
-        Task<List<Item>> LoadProducts();
+        Task<List<Product>> LoadProducts();
     }
 }

@@ -13,7 +13,7 @@ namespace ShoppingCart.Views
 
         private void OnItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
-            var param = e.SelectedItem as Item;
+            var param = e.SelectedItem as ProductViewModel;
             var command = ((ProductsListViewModel)BindingContext).NavigateToProduct;
 
             if (command.CanExecute(param))

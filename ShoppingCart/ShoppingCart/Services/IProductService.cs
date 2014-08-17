@@ -8,10 +8,10 @@ namespace ShoppingCart.Services
     {
         Task<List<string>> GetCategories();
 
-        Task<List<Item>> GetProducts();
+        Task<List<Product>> GetProducts();
 
-        Task<List<Item>> GetProductsForCategory(string category);
+        Task<List<Product>> GetProductsForCategory(string category);
 
-        Task<List<Item>> Search(string searchString);
+        Task<List<Product>> Search(string searchString);
     }
 }

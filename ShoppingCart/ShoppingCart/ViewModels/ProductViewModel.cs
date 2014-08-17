@@ -1,5 +1,7 @@
-﻿using ShoppingCart.Models;
+﻿using ShoppingCart.Async;
+using ShoppingCart.Models;
 using ShoppingCart.Services;
+using Xamarin.Forms;
 
 namespace ShoppingCart.ViewModels
 {
@@ -7,14 +9,18 @@ namespace ShoppingCart.ViewModels
     {
         private readonly INavigationService _navi;
 
-        public ProductViewModel(INavigationService navi)
+        public ProductViewModel(INavigationService navi, Product product)
         {
             _navi = navi;
+            Product = product;
+            IconSource = AsyncImageSource.FromUriAndResource(product.IconUrl, "ShoppingCart.Resources.placeholderImageSmall.png");
         }
 
-        public Item Product
+        public NotifyTaskCompletion<ImageSource> IconSource { get; private set; }
+
+        public Product Product
         {
-            get { return GetValue<Item>(); }
+            get { return GetValue<Product>(); }
             set { SetValue(value); }
         }
     }
