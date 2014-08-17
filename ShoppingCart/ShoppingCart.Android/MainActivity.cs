@@ -1,6 +1,6 @@
 ﻿using Android.App;
 using Android.OS;
-
+using Android.Util;
 using Xamarin.Forms.Platform.Android;
 
 namespace ShoppingCart.Droid
@@ -14,7 +14,12 @@ namespace ShoppingCart.Droid
 
             Xamarin.Forms.Forms.Init(this, bundle);
 
-            SetPage(App.WelcomePage);
+            var page = App.FirstPage;
+            if (page == null)
+            {
+                Log.Error("ShoppingCart", "WelcomePage is null");
+            }
+            SetPage(page);
         }
     }
 }

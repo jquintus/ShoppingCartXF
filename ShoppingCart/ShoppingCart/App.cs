@@ -10,6 +10,7 @@ namespace ShoppingCart
 {
     public static class App
     {
+        private static NavigationPage _firstPage;
         private static NavigationService NaviService;
 
         static App()
@@ -27,21 +28,27 @@ namespace ShoppingCart
             ProductsListViewModel = new ProductsListViewModel(NaviService);
 
             // Pages
-            WelcomePage = new NavigationPage(new WelcomePage());
-            LoginPage = new NavigationPage(new LoginPage());
-            CategoriesListPage = new NavigationPage(new CategoriesListPage());
+            WelcomePage = new WelcomePage();
+            LoginPage = new LoginPage();
+            CategoriesListPage = new CategoriesListPage();
 
             // Startup Page
-            WelcomePage = CategoriesListPage;
+            FirstPage = WelcomePage;// CategoriesListPage;
 
             // Navi
-            NaviService.Navi = WelcomePage.Navigation;
-            NaviService.myPage = WelcomePage;
+            NaviService.Navi = FirstPage.Navigation;
+            NaviService.myPage = FirstPage;
         }
 
         public static Page CategoriesListPage { get; set; }
 
         public static CategoriesListViewModel CategoriesListViewModel { get; set; }
+
+        public static Page FirstPage
+        {
+            get { return _firstPage; }
+            set { _firstPage = new NavigationPage(value); }
+        }
 
         public static Page LoginPage { get; private set; }
 
@@ -58,7 +65,7 @@ namespace ShoppingCart
         public static Page GetProductPage(ProductViewModel productViewModel)
         {
             ProductViewModel = productViewModel;
-            return new NavigationPage(new ProductPage());
+            return new ProductPage();
         }
 
         public static Page GetProductsListPage(List<Product> products, string title)
@@ -67,7 +74,7 @@ namespace ShoppingCart
 
             ProductsListViewModel.Products = products.Select(p => new ProductViewModel(NaviService, p)).ToList();
             ProductsListViewModel.Title = title;
-            return new NavigationPage(new ProductsListPage());
+            return new ProductsListPage();
         }
     }
 }
