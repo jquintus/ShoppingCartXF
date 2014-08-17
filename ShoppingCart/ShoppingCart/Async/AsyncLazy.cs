@@ -2,7 +2,7 @@
 using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 
-namespace ShoppingCart.Utils
+namespace ShoppingCart.Async
 {
     /// <remarks>
     /// http://blogs.msdn.com/b/pfxteam/archive/2011/01/15/10116210.aspx?utm_source=feedburner&utm_medium=twitter&utm_campaign=Feed%3A+SiteHome+(Microsoft+%7C+Blog+%7C+MSDN)

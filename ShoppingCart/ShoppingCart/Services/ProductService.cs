@@ -1,5 +1,5 @@
-﻿using ShoppingCart.Models;
-using ShoppingCart.Utils;
+﻿using ShoppingCart.Async;
+using ShoppingCart.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
