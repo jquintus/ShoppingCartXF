@@ -11,12 +11,8 @@ namespace ShoppingCart.Async
     public sealed class NotifyTaskCompletion<TResult> : INotifyPropertyChanged
     {
         private readonly TResult _defaultResult;
-        public NotifyTaskCompletion(Task<TResult> task)
-            : this(task, default(TResult))
-        {
-
-        }
-        public NotifyTaskCompletion(Task<TResult> task, TResult defaultResult)
+        
+        public NotifyTaskCompletion(Task<TResult> task, TResult defaultResult = default(TResult))
         {
             _defaultResult = defaultResult;
             Task = task;
