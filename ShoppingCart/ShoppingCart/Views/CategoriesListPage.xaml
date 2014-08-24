@@ -6,6 +6,14 @@
              BindingContext="{x:Static local:App.CategoriesListViewModel}">
 
   <StackLayout VerticalOptions="FillAndExpand" Padding="50">
+    <StackLayout VerticalOptions="FillAndExpand" Orientation="Horizontal">
+      <Entry Text="{Binding SearchTerm}"
+             Placeholder="Search"
+             HorizontalOptions="FillAndExpand" />
+      <Button Text ="Search"
+        Command="{Binding SearchCommand}" />
+    </StackLayout>
+
     <Frame>
       <Label Text="Categories"
         HorizontalOptions="Center"

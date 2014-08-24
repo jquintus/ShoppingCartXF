@@ -49,7 +49,11 @@ namespace ShoppingCart.Services
 
             if (string.IsNullOrWhiteSpace(searchString)) return items;
 
-            return new List<Product>();
+            searchString = searchString.ToLower();
+            var filterd = items.Where(i => i.Name.ToLower().Contains(searchString))
+                               .ToList();
+
+            return filterd;
         }
     }
 }

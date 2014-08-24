@@ -54,13 +54,19 @@ namespace ShoppingCart
 
         public static LoginViewModel LoginViewModel { get; set; }
 
-        public static ProductsListViewModel ProductsListViewModel { get; set; }
-
         public static ProductViewModel ProductViewModel { get; set; }
+
+        public static ProductsListViewModel ProductsListViewModel { get; set; }
 
         public static Page WelcomePage { get; private set; }
 
         public static WelcomeViewModel WelcomeViewModel { get; set; }
+
+        public static Page GetProductPage(Product product)
+        {
+            var vm = new ProductViewModel(product);
+            return GetProductPage(vm);
+        }
 
         public static Page GetProductPage(ProductViewModel productViewModel)
         {
