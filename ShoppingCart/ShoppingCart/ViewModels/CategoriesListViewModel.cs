@@ -12,13 +12,15 @@ namespace ShoppingCart.ViewModels
     public class CategoriesListViewModel : BaseViewModel
     {
         private readonly INavigationService _navi;
+        private readonly IScanner _scanner;
         private readonly RelayCommand _searchCommand;
         private readonly IProductService _service;
 
-        public CategoriesListViewModel(IProductService service, INavigationService navi)
+        public CategoriesListViewModel(IProductService service, INavigationService navi, IScanner scanner)
         {
             _service = service;
             _navi = navi;
+            _scanner = scanner;
 
             Items = new NotifyTaskCompletion<List<Product>>(_service.GetProducts());
             Categories = new NotifyTaskCompletion<List<string>>(_service.GetCategories());
@@ -40,27 +42,14 @@ namespace ShoppingCart.ViewModels
                 }
             });
 
-            _searchCommand = new RelayCommand(async () =>
+            _searchCommand = new RelayCommand(Search, () => !string.IsNullOrWhiteSpace(SearchTerm));
+            ScanCommand = new RelayCommand(async () =>
             {
-                var items = (await _service.Search(SearchTerm))
-                            .OrderByDescending(i => i.Rating)
-                            .ToList();
+                var result = await _scanner.Scan();
 
-                if (items != null && items.Any())
-                {
-                    Page page = items.Count == 1
-                         ? page = App.GetProductPage(items.First())
-                         : page = App.GetProductsListPage(items, SearchTerm);
-
-                    await _navi.PushAsync(page);
-                    SearchTerm = string.Empty;
-                }
-                else
-                {
-                    await _navi.DisplayAlert("Error", "No results for search " + SearchTerm);
-                }
-            },
-            () => !string.IsNullOrWhiteSpace(SearchTerm));
+                SearchTerm = result.Text;
+                Search();
+            });
         }
 
         public NotifyTaskCompletion<List<string>> Categories { get; private set; }
@@ -68,6 +57,8 @@ namespace ShoppingCart.ViewModels
         public NotifyTaskCompletion<List<Product>> Items { get; private set; }
 
         public ICommand NavigateToCategory { get; private set; }
+
+        public ICommand ScanCommand { get; private set; }
 
         public ICommand SearchCommand { get { return _searchCommand; } }
 
@@ -78,6 +69,27 @@ namespace ShoppingCart.ViewModels
             {
                 SetValue(value);
                 _searchCommand.RaiseCanExecuteChanged();
+            }
+        }
+
+        private async void Search()
+        {
+            var items = (await _service.Search(SearchTerm))
+                        .OrderByDescending(i => i.Rating)
+                        .ToList();
+
+            if (items != null && items.Any())
+            {
+                Page page = items.Count == 1
+                     ? page = App.GetProductPage(items.First())
+                     : page = App.GetProductsListPage(items, SearchTerm);
+
+                await _navi.PushAsync(page);
+                SearchTerm = string.Empty;
+            }
+            else
+            {
+                await _navi.DisplayAlert("Error", "No results for search " + SearchTerm);
             }
         }
     }

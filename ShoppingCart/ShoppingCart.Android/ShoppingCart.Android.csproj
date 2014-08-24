@@ -73,11 +73,19 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\packages\Xamarin.Forms.1.2.2.6243\lib\MonoAndroid10\Xamarin.Forms.Xaml.dll</HintPath>
     </Reference>
+    <Reference Include="zxing.monoandroid">
+      <HintPath>..\..\Components\zxing.net.mobile-1.4.6\lib\android\zxing.monoandroid.dll</HintPath>
+    </Reference>
+    <Reference Include="ZXing.Net.Mobile">
+      <HintPath>..\..\Components\zxing.net.mobile-1.4.6\lib\android\ZXing.Net.Mobile.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MainActivity.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ServiceRegistrations.cs" />
+    <Compile Include="Services\DroidScanner.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -91,7 +99,14 @@
     <Content Include="Properties\AndroidManifest.xml" />
   </ItemGroup>
   <ItemGroup>
+    <XamarinComponentReference Include="zxing.net.mobile">
+      <Visible>False</Visible>
+      <Version>1.4.6</Version>
+    </XamarinComponentReference>
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\ShoppingCart\ShoppingCart.csproj">
+      <Project>{8eb80e50-ef54-451b-9768-3d38e2a3e122}</Project>
       <Name>ShoppingCart</Name>
     </ProjectReference>
   </ItemGroup>

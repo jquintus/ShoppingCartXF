@@ -12,6 +12,8 @@
              HorizontalOptions="FillAndExpand" />
       <Button Text ="Search"
         Command="{Binding SearchCommand}" />
+      <Button Text ="Scan"
+        Command="{Binding ScanCommand}" />
     </StackLayout>
 
     <Frame>

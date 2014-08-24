@@ -19,12 +19,13 @@ namespace ShoppingCart
             ILoginService login = new LoginService();
             IProductLoader loader = new ProductLoader();
             IProductService products = new ProductService(loader);
+            IScanner scanner = DependencyService.Get<IScanner>();
             NaviService = new NavigationService();
 
             // View Models
             WelcomeViewModel = new WelcomeViewModel(NaviService);
             LoginViewModel = new LoginViewModel(login, NaviService);
-            CategoriesListViewModel = new CategoriesListViewModel(products, NaviService);
+            CategoriesListViewModel = new CategoriesListViewModel(products, NaviService, scanner);
             ProductsListViewModel = new ProductsListViewModel(NaviService);
 
             // Pages

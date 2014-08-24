@@ -44,6 +44,7 @@
     <Compile Include="Services\INavigationService.cs" />
     <Compile Include="Services\IProductLoader.cs" />
     <Compile Include="Services\IProductService.cs" />
+    <Compile Include="Services\IScannerService.cs" />
     <Compile Include="Services\ProductLoader.cs" />
     <Compile Include="Services\ProductService.cs" />
     <Compile Include="Services\LoginService.cs" />

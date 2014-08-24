@@ -12,6 +12,9 @@ namespace ShoppingCart.WinPhone
 
             Forms.Init();
             Content = ShoppingCart.App.FirstPage.ConvertPageToUIElement(this);
+            DispatcherSingleton = this.Dispatcher;
         }
+
+        public static System.Windows.Threading.Dispatcher DispatcherSingleton { get; private set; }
     }
 }

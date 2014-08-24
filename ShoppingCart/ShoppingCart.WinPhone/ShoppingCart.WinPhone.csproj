@@ -104,6 +104,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AppResources.resx</DependentUpon>
     </Compile>
+    <Compile Include="ServiceRegistrations.cs" />
+    <Compile Include="Services\WinPhoneScanner.cs" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
@@ -156,13 +158,11 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ShoppingCart\ShoppingCart.csproj">
-      <Name>ShoppingCart</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <Reference Include="Microsoft.Phone.Controls.Toolkit">
       <HintPath>..\..\packages\WPtoolkit.4.2013.08.16\lib\wp8\Microsoft.Phone.Controls.Toolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="WriteableBitmapExWinPhone">
+      <HintPath>..\..\packages\ZXing.Net.Mobile.1.4.6\lib\wp8\WriteableBitmapExWinPhone.dll</HintPath>
     </Reference>
     <Reference Include="Xamarin.Forms.Core, Version=1.2.2.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -176,6 +176,18 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\packages\Xamarin.Forms.1.2.2.6243\lib\WP80\Xamarin.Forms.Xaml.dll</HintPath>
     </Reference>
+    <Reference Include="zxing.wp8.0">
+      <HintPath>..\..\packages\ZXing.Net.Mobile.1.4.6\lib\wp8\zxing.wp8.0.dll</HintPath>
+    </Reference>
+    <Reference Include="ZXingNetMobile">
+      <HintPath>..\..\packages\ZXing.Net.Mobile.1.4.6\lib\wp8\ZXingNetMobile.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ShoppingCart\ShoppingCart.csproj">
+      <Project>{8eb80e50-ef54-451b-9768-3d38e2a3e122}</Project>
+      <Name>ShoppingCart</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).$(TargetFrameworkVersion).Overrides.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).CSharp.targets" />
