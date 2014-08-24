@@ -72,7 +72,7 @@ namespace ShoppingCart
         {
             if (string.IsNullOrWhiteSpace(title)) title = "Products";
 
-            ProductsListViewModel.Products = products.Select(p => new ProductViewModel(NaviService, p)).ToList();
+            ProductsListViewModel.Products = products.Select(p => new ProductViewModel(p)).ToList();
             ProductsListViewModel.Title = title;
             return new ProductsListPage();
         }
