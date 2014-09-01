@@ -11,17 +11,16 @@ namespace ShoppingCart
 {
     public static class App
     {
-        private static readonly IContainer _container;
-        private static readonly NavigationService NaviService;
+        private static IContainer _container;
+        private static NavigationService NaviService;
         private static NavigationPage _firstPage;
 
-        static App()
+        public static void Init(AppSetup appSetup)
         {
-            _container = ContainerCreator.CreateContainer();
+            _container = appSetup.CreateContainer();
 
             NaviService = _container.Resolve<INavigationService>() as NavigationService;
 
-            // Pages
             WelcomePage = new WelcomePage();
             LoginPage = new LoginPage();
             CategoriesListPage = new CategoriesListPage();

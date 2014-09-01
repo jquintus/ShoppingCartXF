@@ -37,7 +37,7 @@
     <Compile Include="App.cs" />
     <Compile Include="Async\AsyncImageSource.cs" />
     <Compile Include="Async\NotifyTaskCompletion.cs" />
-    <Compile Include="ContainerCreator.cs" />
+    <Compile Include="AppSetup.cs" />
     <Compile Include="Models\Item.cs" />
     <Compile Include="Mvvm\SimpleCommand.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
