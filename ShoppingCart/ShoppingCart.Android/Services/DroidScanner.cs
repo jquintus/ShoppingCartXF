@@ -1,4 +1,3 @@
-using Java.Lang;
 using ShoppingCart.Services;
 using System.Threading.Tasks;
 using Xamarin.Forms;
@@ -8,8 +7,17 @@ namespace ShoppingCart.Droid.Services
 {
     public class DroidScanner : IScanner
     {
+        private readonly ILogger _logger;
+
+        public DroidScanner(ILogger logger)
+        {
+            _logger = logger;
+        }
+
         public async Task<ScanResult> Scan()
         {
+            _logger.Info("Starting the barcode scanner.  Stand back.");
+
             var context = Forms.Context;
             var scanner = new MobileBarcodeScanner(context)
             {
@@ -29,7 +37,7 @@ namespace ShoppingCart.Droid.Services
             }
             catch (System.Exception)
             {
-
+                _logger.Info("User hit back");
                 return new ScanResult
                 {
                     Text = string.Empty,

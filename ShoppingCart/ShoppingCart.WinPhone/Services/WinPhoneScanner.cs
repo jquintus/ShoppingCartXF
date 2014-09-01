@@ -6,8 +6,17 @@ namespace ShoppingCart.WinPhone.Services
 {
     public class WinPhoneScanner : IScanner
     {
+        private readonly ILogger _logger;
+
+        public WinPhoneScanner(ILogger logger)
+        {
+            _logger = logger;
+        }
+
         public async Task<ScanResult> Scan()
         {
+            _logger.Info("Starting the barcode scanner.  Stand back.");
+
             var scanner = new MobileBarcodeScanner(MainPage.DispatcherSingleton)
             {
                 UseCustomOverlay = false,
