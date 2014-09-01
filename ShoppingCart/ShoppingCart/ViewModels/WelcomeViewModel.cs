@@ -1,4 +1,5 @@
 ﻿using ShoppingCart.Mvvm;
+using ShoppingCart.Services;
 using System.Windows.Input;
 using Xamarin.Forms;
 
@@ -8,7 +9,7 @@ namespace ShoppingCart.ViewModels
     {
         private readonly INavigation _navi;
 
-        public WelcomeViewModel(INavigation navi)
+        public WelcomeViewModel(INavigationService navi)
         {
             _navi = navi;
         }
