@@ -15,4 +15,4 @@ Sample code for a shopping cart app using Xamarin Forms.  There is a series of b
   [7]: http://blog.masterdevs.com/xf-day-3/
   [8]: https://github.com/jquintus/spikes/tree/ShoppingCart-Day3/XamarinSpikes/ShoppingCart
   [9]: http://blog.masterdevs.com/xf-day-4/
-  [10]: https://github.com/jquintus/spikes/tree/ShoppingCart-Day4/XamarinSpikes/ShoppingCart
+  [10]: https://github.com/jquintus/spikes/tree/ShoppingCart-Day4.1/XamarinSpikes/ShoppingCart
