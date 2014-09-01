@@ -18,12 +18,23 @@ namespace ShoppingCart.Droid.Services
                 TopText = "Hold your camera about \n6 inches away from the barcode",
             };
 
-            var result = await scanner.Scan();
-
-            return new ScanResult
+            try
             {
-                Text = result.Text,
-            };
+                var result = await scanner.Scan();
+
+                return new ScanResult
+                {
+                    Text = result.Text,
+                };
+            }
+            catch (System.Exception)
+            {
+
+                return new ScanResult
+                {
+                    Text = string.Empty,
+                };
+            }
         }
     }
 }
