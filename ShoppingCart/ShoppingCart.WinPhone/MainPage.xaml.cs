@@ -11,7 +11,7 @@ namespace ShoppingCart.WinPhone
             InitializeComponent();
 
             Forms.Init();
-            Content = ShoppingCart.App.FirstPage.ConvertPageToUIElement(this);
+            Content = ShoppingCart.App.StartupPage.ConvertPageToUIElement(this);
             DispatcherSingleton = this.Dispatcher;
         }
 

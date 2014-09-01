@@ -14,7 +14,7 @@ namespace ShoppingCart.Droid
 
             Xamarin.Forms.Forms.Init(this, bundle);
 
-            var page = App.FirstPage;
+            var page = App.StartupPage;
             if (page == null)
             {
                 Log.Error("ShoppingCart", "WelcomePage is null");

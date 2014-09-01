@@ -27,7 +27,7 @@ namespace ShoppingCart
             CategoriesListPage = new CategoriesListPage();
 
             // Startup Page
-            FirstPage = WelcomePage;// CategoriesListPage;
+            StartupPage = WelcomePage;// CategoriesListPage;
         }
 
         #region View Models
@@ -48,14 +48,14 @@ namespace ShoppingCart
 
         public static Page CategoriesListPage { get; set; }
 
-        public static Page FirstPage
+        public static Page StartupPage
         {
             get { return _firstPage; }
             set
             {
                 _firstPage = new NavigationPage(value);
-                NaviService.Navi = FirstPage.Navigation;
-                NaviService.myPage = FirstPage;
+                NaviService.Navi = StartupPage.Navigation;
+                NaviService.myPage = StartupPage;
             }
         }
 
