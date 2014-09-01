@@ -5,6 +5,7 @@ Sample code for a shopping cart app using Xamarin Forms.  There is a series of b
  3. Day 2:  Frames, Event Handlers, and Binding Bugs  ([blog][5] / [code][6])
  4. Day 3:  Images in Lists ([blog][7] / [code][8])
  5. Day 4:  Searching and Components ([blog][9] / [code][10])
+ 6. Day 5:  Dependency Injection ([blog][11] / [code][12])
 
   [1]: http://blog.masterdevs.com/xamarin-forms-shopping-cart-day-0/
   [2]: https://github.com/jquintus/spikes/blob/master/XamarinSpikes/ShoppingCart/Archive/ShoppingCart-Day0.zip?raw=true
@@ -16,3 +17,6 @@ Sample code for a shopping cart app using Xamarin Forms.  There is a series of b
   [8]: https://github.com/jquintus/spikes/tree/ShoppingCart-Day3/XamarinSpikes/ShoppingCart
   [9]: http://blog.masterdevs.com/xf-day-4/
   [10]: https://github.com/jquintus/spikes/tree/ShoppingCart-Day4.1/XamarinSpikes/ShoppingCart
+  [11]: http://blog.masterdevs.com/xf-day-5/
+  [12]: https://github.com/jquintus/spikes/tree/ShoppingCart-Day5/XamarinSpikes/ShoppingCart
+
