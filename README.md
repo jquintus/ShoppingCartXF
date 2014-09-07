@@ -6,7 +6,7 @@ Sample code for a shopping cart app using Xamarin Forms.  There is a series of b
  - Day 3:  Images in Lists ([blog][7] / [code][8])
  - Day 4:  Searching and Components ([blog][9] / [code][10])
  - Day 5:  Dependency Injection ([blog][11] / [code][12])
- - Day 6:  Theming ([blog][13] / [code][14])
+ - Day 6:  Styling ([blog][13] / [code][14])
 
   [1]: http://blog.masterdevs.com/xamarin-forms-shopping-cart-day-0/
   [2]: https://github.com/jquintus/spikes/blob/master/XamarinSpikes/ShoppingCart/Archive/ShoppingCart-Day0.zip?raw=true
