@@ -3,7 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ShoppingCart.Views.WelcomePage"
              xmlns:local="clr-namespace:ShoppingCart;assembly=ShoppingCart"
-             BindingContext="{x:Static local:App.WelcomeViewModel}">
+             BindingContext="{x:Static local:App.WelcomeViewModel}"
+             BackgroundColor="White" >
 
   <StackLayout
     VerticalOptions="Center">
@@ -14,8 +15,8 @@
     <Label Text="Login to start shopping" HorizontalOptions="Center" />
 
     <Frame>
-      
-    <Button Text ="Log In" Command="{Binding GoToLoginPageCommand}" HorizontalOptions="Center" />
+
+      <Button Text ="Log In" Command="{Binding GoToLoginPageCommand}" HorizontalOptions="Center" />
     </Frame>
   </StackLayout>
 </ContentPage>

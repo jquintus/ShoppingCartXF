@@ -12,6 +12,11 @@ namespace ShoppingCart
         private void Foo()
         {
 
+            Page p = new Page
+            {
+                //BackgroundColor = "white",
+            };
+
             var l = new Label
             {
                 Font = Font.SystemFontOfSize(NamedSize.Micro),
