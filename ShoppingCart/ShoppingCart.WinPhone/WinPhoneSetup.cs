@@ -12,6 +12,7 @@ namespace ShoppingCart.WinPhone
 
             cb.RegisterType<WinPhoneLogger>().As<ILogger>().SingleInstance();
             cb.RegisterType<WinPhoneScanner>().As<IScanner>().SingleInstance();
+            cb.RegisterType<WinPhoneThemer>().As<IThemer>().SingleInstance();
         }
     }
 }

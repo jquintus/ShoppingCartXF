@@ -109,6 +109,7 @@
     </Compile>
     <Compile Include="Services\WinPhoneLogger.cs" />
     <Compile Include="Services\WinPhoneScanner.cs" />
+    <Compile Include="Services\WinPhoneThemer.cs" />
     <Compile Include="WinPhoneSetup.cs" />
   </ItemGroup>
   <ItemGroup>
