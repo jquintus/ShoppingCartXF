@@ -20,6 +20,7 @@ namespace ShoppingCart
             _container = appSetup.CreateContainer();
 
             NaviService = _container.Resolve<INavigationService>() as NavigationService;
+            AccentColor = _container.Resolve<IThemer>().AccentColor;
 
             WelcomePage = new WelcomePage();
             LoginPage = new LoginPage();
@@ -63,6 +64,8 @@ namespace ShoppingCart
         public static Page WelcomePage { get; private set; }
 
         #endregion
+
+        public static Color AccentColor { get; private set; }
 
         public static Page GetProductPage(Product product)
         {
