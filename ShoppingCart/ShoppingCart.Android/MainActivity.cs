@@ -4,7 +4,10 @@ using Xamarin.Forms.Platform.Android;
 
 namespace ShoppingCart.Droid
 {
-    [Activity(Label = "ShoppingCart", MainLauncher = true)]
+    [Activity(Label = "ShoppingCart"
+        , MainLauncher = true
+        //, Theme = @"@style/AppTheme"
+        )]
     public class MainActivity : AndroidActivity
     {
         protected override void OnCreate(Bundle bundle)
