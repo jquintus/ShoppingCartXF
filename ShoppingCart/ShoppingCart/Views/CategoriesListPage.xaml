@@ -20,7 +20,12 @@
     <Frame>
       <Label Text="Categories"
         HorizontalOptions="Center"
-        Font="Bold,Large" />
+        Font="Bold,Large" >
+        <Label.TextColor>
+          <OnPlatform x:TypeArguments="Color"
+             Android="#afcca6" />
+        </Label.TextColor>
+      </Label>
     </Frame>
 
     <ListView ItemsSource="{Binding Categories.Result}" IsGroupingEnabled="false" ItemSelected="OnItemSelected">

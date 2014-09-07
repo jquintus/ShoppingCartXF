@@ -9,10 +9,17 @@
   <StackLayout VerticalOptions="FillAndExpand" Padding="50">
 
     <Frame Padding="75">
-      <Label Text="Login" 
+      <Label Text="Login"
         Font="Bold,Large"
-        TextColor="Blue"
-        HorizontalOptions="Center" />
+        HorizontalOptions="Center" >
+        <Label.TextColor>
+          <OnPlatform x:TypeArguments="Color"
+             iOS="Blue"
+             Android="#afcca6"
+             WinPhone="Blue" />
+        </Label.TextColor>
+        
+      </Label>
     </Frame>
 
     <Label Text="User name" 

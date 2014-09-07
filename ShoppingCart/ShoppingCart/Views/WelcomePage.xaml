@@ -9,7 +9,12 @@
   <StackLayout
     VerticalOptions="Center">
     <Frame>
-      <Label Text="Welcome to The Store" Font="Bold, Large" HorizontalOptions="Center" />
+      <Label Text="Welcome to The Store" Font="Bold, Large" HorizontalOptions="Center" >
+        <Label.TextColor>
+          <OnPlatform x:TypeArguments="Color"
+             Android="#afcca6" />
+        </Label.TextColor>
+      </Label>
     </Frame>
 
     <Label Text="Login to start shopping" HorizontalOptions="Center" />
