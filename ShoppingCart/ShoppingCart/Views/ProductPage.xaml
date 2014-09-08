@@ -4,15 +4,17 @@
              x:Class="ShoppingCart.Views.ProductPage"
              xmlns:local="clr-namespace:ShoppingCart;assembly=ShoppingCart"
              BindingContext="{x:Static local:App.ProductViewModel}"
-             BackgroundColor="White" >
+             BackgroundColor="White">
 
   <ScrollView>
     <StackLayout VerticalOptions="FillAndExpand" Padding="50">
       <Label Text="{Binding Product.Name}"
         HorizontalOptions="Center"
-        Font="Bold,Large" >
+        Font="Bold,Large">
         <Label.TextColor>
           <OnPlatform x:TypeArguments="Color"
+             iOS="Accent"
+             WinPhone="Accent"
              Android="#afcca6" />
         </Label.TextColor>
       </Label>

@@ -14,9 +14,9 @@
         HorizontalOptions="Center" >
         <Label.TextColor>
           <OnPlatform x:TypeArguments="Color"
-             iOS="Blue"
-             Android="#afcca6"
-             WinPhone="Blue" />
+             iOS="Accent"
+             WinPhone="Accent"
+             Android="#afcca6" />
         </Label.TextColor>
         
       </Label>

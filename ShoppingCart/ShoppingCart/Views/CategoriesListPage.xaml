@@ -4,7 +4,7 @@
              x:Class="ShoppingCart.Views.CategoriesListPage"
              xmlns:local="clr-namespace:ShoppingCart;assembly=ShoppingCart"
              BindingContext="{x:Static local:App.CategoriesListViewModel}"
-             BackgroundColor="White" >
+             BackgroundColor="White">
 
   <StackLayout VerticalOptions="FillAndExpand" Padding="50">
     <StackLayout VerticalOptions="FillAndExpand" Orientation="Horizontal">
@@ -20,9 +20,11 @@
     <Frame>
       <Label Text="Categories"
         HorizontalOptions="Center"
-        Font="Bold,Large" >
+        Font="Bold,Large">
         <Label.TextColor>
           <OnPlatform x:TypeArguments="Color"
+             iOS="Accent"
+             WinPhone="Accent"
              Android="#afcca6" />
         </Label.TextColor>
       </Label>
