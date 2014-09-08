@@ -7,9 +7,9 @@ namespace ShoppingCart.Services
         Color AccentColor { get; }
     }
 
-    public class NullThemer : IThemer
+    public class DefaultThemer : IThemer
     {
-        public NullThemer()
+        public DefaultThemer()
         {
             AccentColor = Xamarin.Forms.Color.Accent;
         }

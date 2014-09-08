@@ -30,7 +30,7 @@ namespace ShoppingCart
             cb.RegisterType<ProductLoader>().As<IProductLoader>().SingleInstance();
             cb.RegisterType<ProductService>().As<IProductService>().SingleInstance();
             cb.RegisterType<NavigationService>().As<INavigationService>().SingleInstance();
-            cb.RegisterType<NullThemer>().As<IThemer>().SingleInstance();
+            cb.RegisterType<DefaultThemer>().As<IThemer>().SingleInstance();
 
             // View Models
             cb.RegisterType<CategoriesListViewModel>().SingleInstance();
