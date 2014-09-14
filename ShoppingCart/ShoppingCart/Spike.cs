@@ -12,6 +12,14 @@ namespace ShoppingCart
         private void Foo()
         {
 
+            ImageCell cell = new ImageCell
+            {
+                ImageSource = null,
+                Text = "hello ",
+
+                
+            };
+
             Page p = new Page
             {
                 //BackgroundColor = "white",

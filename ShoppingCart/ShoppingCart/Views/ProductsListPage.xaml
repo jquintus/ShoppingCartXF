@@ -25,15 +25,9 @@
       <ListView.ItemTemplate>
         <DataTemplate>
 
-          <ViewCell>
-            <StackLayout VerticalOptions="FillAndExpand" Orientation="Horizontal" Padding="10">
-              <Image Aspect="AspectFill"
-                     HeightRequest ="75" WidthRequest="75"
-                     Source="{Binding IconSource.Result}" />
+            <ImageCell ImageSource ="{Binding IconSource.Result}" 
 
-              <Label Text="{Binding Product.Name}" YAlign="Center" Font="Large" />
-            </StackLayout>
-          </ViewCell>
+              Text="{Binding Product.Name}" />
         </DataTemplate>
       </ListView.ItemTemplate>
     </ListView>
