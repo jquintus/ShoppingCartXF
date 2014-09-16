@@ -20,14 +20,15 @@
       </Label>
     </Frame>
 
-    <ListView ItemsSource="{Binding Products}" ItemSelected="OnItemSelected">
-
+    <ListView ItemsSource="{Binding Products}">
       <ListView.ItemTemplate>
         <DataTemplate>
 
-            <ImageCell ImageSource ="{Binding IconSource.Result}" 
-
-              Text="{Binding Product.Name}" />
+          <ImageCell ImageSource ="{Binding IconSource.Result}"
+                     Text="{Binding Product.Name}"
+                     Detail="{Binding Product.Price, StringFormat='{0:C}'}"
+                     Command="{Binding NavigateToProduct}"
+                     CommandParameter="{Binding .}" />
         </DataTemplate>
       </ListView.ItemTemplate>
     </ListView>

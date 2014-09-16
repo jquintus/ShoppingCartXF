@@ -27,7 +27,7 @@ namespace ShoppingCart
             CategoriesListPage = new CategoriesListPage();
 
             // Startup Page
-            StartupPage = WelcomePage;// CategoriesListPage;
+            StartupPage = CategoriesListPage;
         }
 
         #region View Models
@@ -69,7 +69,7 @@ namespace ShoppingCart
 
         public static Page GetProductPage(Product product)
         {
-            var vm = new ProductViewModel(product);
+            var vm = new ProductViewModel(product, ProductsListViewModel.NavigateToProduct);
             return GetProductPage(vm);
         }
 
@@ -83,7 +83,8 @@ namespace ShoppingCart
         {
             if (string.IsNullOrWhiteSpace(title)) title = "Products";
 
-            ProductsListViewModel.Products = products.Select(p => new ProductViewModel(p)).ToList();
+            var cmd = ProductsListViewModel.NavigateToProduct;
+            ProductsListViewModel.Products = products.Select(p => new ProductViewModel(p, cmd)).ToList();
             ProductsListViewModel.Title = title;
             return new ProductsListPage();
         }
