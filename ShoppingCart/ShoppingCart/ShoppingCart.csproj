@@ -38,7 +38,7 @@
     <Compile Include="Async\AsyncImageSource.cs" />
     <Compile Include="Async\NotifyTaskCompletion.cs" />
     <Compile Include="AppSetup.cs" />
-    <Compile Include="Behaviors\ItemClickedBehavior.cs" />
+    <Compile Include="Behaviors\AnimateSizeBehavior.cs" />
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\Item.cs" />
     <Compile Include="Mvvm\SimpleCommand.cs" />

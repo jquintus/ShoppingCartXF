@@ -2,41 +2,55 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:ShoppingCart;assembly=ShoppingCart"
+             xmlns:bLocal="clr-namespace:ShoppingCart.Behaviors;assembly=ShoppingCart"
+             xmlns:b="clr-namespace:Xamarin.Behaviors;assembly=Xamarin.Behaviors"
              BindingContext="{x:Static local:App.LoginViewModel}"
              x:Class="ShoppingCart.Views.LoginPage"
-             BackgroundColor="White" >
+             BackgroundColor="White">
 
   <StackLayout VerticalOptions="FillAndExpand" Padding="50">
 
     <Frame Padding="75">
       <Label Text="Login"
         Font="Bold,Large"
-        HorizontalOptions="Center" >
+        HorizontalOptions="Center">
         <Label.TextColor>
           <OnPlatform x:TypeArguments="Color"
              iOS="Accent"
              WinPhone="Accent"
              Android="#afcca6" />
         </Label.TextColor>
-        
       </Label>
     </Frame>
 
-    <Label Text="User name" 
+    <Label Text="User name"
       HorizontalOptions="Start" />
-    <Entry Text ="{Binding Username}" 
-      Placeholder ="User name goes here" 
-      HorizontalOptions="FillAndExpand" />
+    <Entry Text ="{Binding Username}"
+      Placeholder ="User name goes here"
+      HorizontalOptions="FillAndExpand">
 
-    <Label Text="Password" 
+      <b:Interaction.Behaviors>
+        <b:BehaviorCollection>
+          <bLocal:AnimateSizeBehavior />
+        </b:BehaviorCollection>
+      </b:Interaction.Behaviors>
+    </Entry>
+
+    <Label Text="Password"
       HorizontalOptions="Start" />
-    <Entry Text ="{Binding Password}" 
-      Placeholder ="Password goes here" 
-      HorizontalOptions="FillAndExpand" />
+    <Entry Text ="{Binding Password}"
+      Placeholder ="Password goes here"
+      HorizontalOptions="FillAndExpand">
+      <b:Interaction.Behaviors>
+        <b:BehaviorCollection>
+          <bLocal:AnimateSizeBehavior EasingFunction="BounceIn"
+                                      Scale="1.25" />
+        </b:BehaviorCollection>
+      </b:Interaction.Behaviors>
+    </Entry>
 
-    <Button Text ="Log In" 
-      Command="{Binding LoginCommand}" 
+    <Button Text ="Log In"
+      Command="{Binding LoginCommand}"
       HorizontalOptions="CenterAndExpand" />
-
   </StackLayout>
 </ContentPage>
