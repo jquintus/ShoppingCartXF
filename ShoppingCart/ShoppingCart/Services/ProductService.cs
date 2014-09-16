@@ -18,12 +18,17 @@ namespace ShoppingCart.Services
             _itemsAsync = new AsyncLazy<List<Product>>(async () => await _loader.LoadProducts());
         }
 
-        public async Task<List<string>> GetCategories()
+        public async Task<List<Category>> GetCategories()
         {
             var items = await _itemsAsync;
-            var cats = items.Select(i => i.Category)
-                            .Distinct(StringComparer.CurrentCultureIgnoreCase)
-                            .OrderBy(s => s)
+
+            var cats = items.GroupBy(i => i.Category)
+                            .Select(g => new Category
+                            {
+                                Name = g.Key,
+                                Count = g.Count()
+                            })
+                            .OrderBy(c => c.Name)
                             .ToList();
 
             return cats;

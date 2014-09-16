@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ShoppingCart.Views.CategoriesListPage"
              xmlns:local="clr-namespace:ShoppingCart;assembly=ShoppingCart"
+             xmlns:b="clr-namespace:Xamarin.Behaviors;assembly=Xamarin.Behaviors"
              BindingContext="{x:Static local:App.CategoriesListViewModel}"
              BackgroundColor="White">
 
@@ -30,14 +31,19 @@
       </Label>
     </Frame>
 
-    <ListView ItemsSource="{Binding Categories.Result}" IsGroupingEnabled="false" ItemSelected="OnItemSelected">
-
+    <ListView ItemsSource="{Binding Categories.Result}">
       <ListView.ItemTemplate>
         <DataTemplate>
-
-          <ViewCell>
-            <Label Text="{Binding .}" YAlign="Center" Font="Large" />
-          </ViewCell>
+          <TextCell Text="{Binding Name}"
+                    Detail="{Binding Count}">
+            <b:Interaction.Behaviors>
+              <b:BehaviorCollection>
+                <b:EventToCommand EventName="Tapped"
+                                  Command="{Binding NavigateToCategory}"
+                                  CommandParameter="{Binding Category}" />
+              </b:BehaviorCollection>
+            </b:Interaction.Behaviors>
+          </TextCell>
         </DataTemplate>
       </ListView.ItemTemplate>
     </ListView>

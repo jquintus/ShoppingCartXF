@@ -6,7 +6,7 @@ namespace ShoppingCart.Services
 {
     public interface IProductService
     {
-        Task<List<string>> GetCategories();
+        Task<List<Category>> GetCategories();
 
         Task<List<Product>> GetProducts();
 

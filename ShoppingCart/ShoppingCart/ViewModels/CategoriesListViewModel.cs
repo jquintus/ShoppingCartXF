@@ -4,6 +4,7 @@ using ShoppingCart.Models;
 using ShoppingCart.Services;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Forms;
 
@@ -22,26 +23,6 @@ namespace ShoppingCart.ViewModels
             _navi = navi;
             _scanner = scanner;
 
-            Items = new NotifyTaskCompletion<List<Product>>(_service.GetProducts());
-            Categories = new NotifyTaskCompletion<List<string>>(_service.GetCategories());
-
-            NavigateToCategory = new RelayCommand<string>(async cat =>
-            {
-                var items = (await _service.GetProductsForCategory(cat))
-                    .OrderByDescending(i => i.Rating)
-                    .ToList();
-
-                if (items != null && items.Any())
-                {
-                    var page = App.GetProductsListPage(items, cat);
-                    await _navi.PushAsync(page);
-                }
-                else
-                {
-                    await _navi.DisplayAlert("Error", "There are no items in the category " + cat);
-                }
-            });
-
             _searchCommand = new RelayCommand(Search, () => !string.IsNullOrWhiteSpace(SearchTerm));
             ScanCommand = new RelayCommand(async () =>
             {
@@ -50,13 +31,11 @@ namespace ShoppingCart.ViewModels
                 SearchTerm = result.Text;
                 Search();
             });
+
+            Categories = new NotifyTaskCompletion<List<CategoryViewModel>>(GetCategories());
         }
 
-        public NotifyTaskCompletion<List<string>> Categories { get; private set; }
-
-        public NotifyTaskCompletion<List<Product>> Items { get; private set; }
-
-        public ICommand NavigateToCategory { get; private set; }
+        public NotifyTaskCompletion<List<CategoryViewModel>> Categories { get; private set; }
 
         public ICommand ScanCommand { get; private set; }
 
@@ -70,6 +49,29 @@ namespace ShoppingCart.ViewModels
                 SetValue(value);
                 _searchCommand.RaiseCanExecuteChanged();
             }
+        }
+
+        private async Task<List<CategoryViewModel>> GetCategories()
+        {
+            var navigateToCategory = new RelayCommand<Category>(async cat =>
+            {
+                var items = (await _service.GetProductsForCategory(cat.Name))
+                    .OrderByDescending(i => i.Rating)
+                    .ToList();
+
+                if (items != null && items.Any())
+                {
+                    var page = App.GetProductsListPage(items, cat.Name);
+                    await _navi.PushAsync(page);
+                }
+                else
+                {
+                    await _navi.DisplayAlert("Error", "There are no items in the category " + cat);
+                }
+            });
+
+            var names = await _service.GetCategories();
+            return names.Select(n => new CategoryViewModel(n, navigateToCategory)).ToList();
         }
 
         private async void Search()

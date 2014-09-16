@@ -38,6 +38,8 @@
     <Compile Include="Async\AsyncImageSource.cs" />
     <Compile Include="Async\NotifyTaskCompletion.cs" />
     <Compile Include="AppSetup.cs" />
+    <Compile Include="Behaviors\ItemClickedBehavior.cs" />
+    <Compile Include="Models\Category.cs" />
     <Compile Include="Models\Item.cs" />
     <Compile Include="Mvvm\SimpleCommand.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -55,6 +57,7 @@
     <Compile Include="Spike.cs" />
     <Compile Include="Async\AsyncLazy.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
+    <Compile Include="ViewModels\CategoryViewModel.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
     <Compile Include="ViewModels\CategoriesListViewModel.cs" />
     <Compile Include="ViewModels\ProductsListViewModel.cs" />
@@ -97,6 +100,9 @@
     </Reference>
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\..\packages\Newtonsoft.Json.6.0.4\lib\portable-net45+wp80+win8+wpa81\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Behaviors">
+      <HintPath>..\..\packages\Xamarin.Behaviors.1.0.1\lib\Xamarin.Behaviors.dll</HintPath>
     </Reference>
     <Reference Include="Xamarin.Forms.Core">
       <HintPath>..\..\packages\Xamarin.Forms.1.2.2.6243\lib\portable-win+net45+wp80+MonoAndroid10+MonoTouch10\Xamarin.Forms.Core.dll</HintPath>

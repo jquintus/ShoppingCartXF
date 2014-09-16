@@ -177,6 +177,9 @@
     <Reference Include="WriteableBitmapExWinPhone">
       <HintPath>..\..\packages\ZXing.Net.Mobile.1.4.6\lib\wp8\WriteableBitmapExWinPhone.dll</HintPath>
     </Reference>
+    <Reference Include="Xamarin.Behaviors">
+      <HintPath>..\..\packages\Xamarin.Behaviors.1.0.1\lib\Xamarin.Behaviors.dll</HintPath>
+    </Reference>
     <Reference Include="Xamarin.Forms.Core, Version=1.2.2.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\packages\Xamarin.Forms.1.2.2.6243\lib\WP80\Xamarin.Forms.Core.dll</HintPath>
