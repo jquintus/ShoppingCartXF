@@ -1,5 +1,7 @@
 ﻿using ShoppingCart.Models;
+using ShoppingCart.Services;
 using System.Windows.Input;
+using Xamarin.Forms;
 
 namespace ShoppingCart.ViewModels
 {
@@ -7,10 +9,11 @@ namespace ShoppingCart.ViewModels
     {
         private readonly Category _category;
 
-        public CategoryViewModel(Category category, ICommand navigateCommand)
+        public CategoryViewModel(Category category)
         {
             _category = category;
-            NavigateToCategory = navigateCommand;
+
+            NavigateToCategory = new Command(() => MessagingCenter.Send(category, Messages.NavigateTo));
 
             Name = _category.Name;
 

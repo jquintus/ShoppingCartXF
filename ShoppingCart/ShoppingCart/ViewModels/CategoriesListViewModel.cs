@@ -12,16 +12,18 @@ namespace ShoppingCart.ViewModels
 {
     public class CategoriesListViewModel : BaseViewModel
     {
-        private readonly INavigationService _navi;
+        private readonly IAppNavigation _navi;
         private readonly IScanner _scanner;
         private readonly RelayCommand _searchCommand;
         private readonly IProductService _service;
 
-        public CategoriesListViewModel(IProductService service, INavigationService navi, IScanner scanner)
+        public CategoriesListViewModel(IProductService service, IAppNavigation navi, IScanner scanner)
         {
             _service = service;
             _navi = navi;
             _scanner = scanner;
+
+            MessagingCenter.Subscribe<Category>(this, Messages.NavigateTo, NavigateToCategory);
 
             _searchCommand = new RelayCommand(Search, () => !string.IsNullOrWhiteSpace(SearchTerm));
             ScanCommand = new RelayCommand(async () =>
@@ -53,25 +55,17 @@ namespace ShoppingCart.ViewModels
 
         private async Task<List<CategoryViewModel>> GetCategories()
         {
-            var navigateToCategory = new RelayCommand<Category>(async cat =>
-            {
-                var items = (await _service.GetProductsForCategory(cat.Name))
-                    .OrderByDescending(i => i.Rating)
-                    .ToList();
-
-                if (items != null && items.Any())
-                {
-                    var page = App.GetProductsListPage(items, cat.Name);
-                    await _navi.PushAsync(page);
-                }
-                else
-                {
-                    await _navi.DisplayAlert("Error", "There are no items in the category " + cat);
-                }
-            });
-
             var names = await _service.GetCategories();
-            return names.Select(n => new CategoryViewModel(n, navigateToCategory)).ToList();
+            return names.Select(n => new CategoryViewModel(n)).ToList();
+        }
+
+        private async void NavigateToCategory(Category cat)
+        {
+            var items = (await _service.GetProductsForCategory(cat.Name))
+                .OrderByDescending(i => i.Rating)
+                .ToList();
+
+            await _navi.ShowProductList(items, cat.Name);
         }
 
         private async void Search()
@@ -80,19 +74,9 @@ namespace ShoppingCart.ViewModels
                         .OrderByDescending(i => i.Rating)
                         .ToList();
 
-            if (items != null && items.Any())
-            {
-                Page page = items.Count == 1
-                     ? page = App.GetProductPage(items.First())
-                     : page = App.GetProductsListPage(items, SearchTerm);
+            await _navi.ShowProductList(items, SearchTerm, true);
 
-                await _navi.PushAsync(page);
-                SearchTerm = string.Empty;
-            }
-            else
-            {
-                await _navi.DisplayAlert("Error", "No results for search " + SearchTerm);
-            }
+            SearchTerm = string.Empty;
         }
     }
 }

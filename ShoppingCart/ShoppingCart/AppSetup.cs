@@ -31,6 +31,7 @@ namespace ShoppingCart
             cb.RegisterType<ProductService>().As<IProductService>().SingleInstance();
             cb.RegisterType<NavigationService>().As<INavigationService>().SingleInstance();
             cb.RegisterType<DefaultThemer>().As<IThemer>().SingleInstance();
+            cb.RegisterType<AppNavigation>().As<IAppNavigation>().SingleInstance();
 
             // View Models
             cb.RegisterType<CategoriesListViewModel>().SingleInstance();
