@@ -7,9 +7,9 @@ namespace ShoppingCart.ViewModels
     public class LoginViewModel : BaseViewModel
     {
         private readonly ILoginService _loginService;
-        private readonly INavigationService _navigationService;
+        private readonly IAppNavigation _navigationService;
 
-        public LoginViewModel(ILoginService loginService, INavigationService navigationService)
+        public LoginViewModel(ILoginService loginService, IAppNavigation navigationService)
         {
             _loginService = loginService;
             _navigationService = navigationService;
@@ -33,15 +33,8 @@ namespace ShoppingCart.ViewModels
         {
             bool result = await _loginService.LoginAsync(Username, Password);
 
-            if (result)
-            {
-                //await _navigationService.PopAsync();
-                await _navigationService.PushAsync(App.CategoriesListPage);
-            }
-            else
-            {
-                await _navigationService.DisplayAlert("Error", "Invalid username or password", "ok");
-            }
+            await _navigationService.LoggedIn(result);
+
         }
     }
 }

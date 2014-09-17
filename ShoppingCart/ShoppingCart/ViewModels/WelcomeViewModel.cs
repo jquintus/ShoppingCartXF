@@ -7,16 +7,16 @@ namespace ShoppingCart.ViewModels
 {
     public class WelcomeViewModel
     {
-        private readonly INavigation _navi;
+        private readonly IAppNavigation _navi;
 
-        public WelcomeViewModel(INavigationService navi)
+        public WelcomeViewModel(IAppNavigation navi)
         {
             _navi = navi;
         }
 
         public ICommand GoToLoginPageCommand
         {
-            get { return new SimpleCommand(() => _navi.PushAsync(App.LoginPage)); }
+            get { return new SimpleCommand(() => _navi.ShowLogin()); }
         }
     }
 }

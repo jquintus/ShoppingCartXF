@@ -1,29 +1,21 @@
-﻿using GalaSoft.MvvmLight.Command;
-using ShoppingCart.Models;
+﻿using ShoppingCart.Models;
 using ShoppingCart.Services;
 using System.Collections.Generic;
-using System.Windows.Input;
+using Xamarin.Forms;
 
 namespace ShoppingCart.ViewModels
 {
     public class ProductsListViewModel : BaseViewModel
     {
-        private readonly INavigationService _navi;
+        private readonly IAppNavigation _navi;
 
-        public ProductsListViewModel(INavigationService navi)
+        public ProductsListViewModel(IAppNavigation navi)
         {
             _navi = navi;
             Title = "Products Page";
 
-            NavigateToProduct = new RelayCommand<ProductViewModel>(async item =>
-                {
-                    var page = App.GetProductPage(item);
-                    await _navi.PushAsync(page);
-                },
-                item => item != null);
+            MessagingCenter.Subscribe<Product>(this, Messages.NavigateTo, NavigateToProduct);
         }
-
-        public ICommand NavigateToProduct { get; private set; }
 
         public List<ProductViewModel> Products
         {
@@ -35,6 +27,11 @@ namespace ShoppingCart.ViewModels
         {
             get { return GetValue<string>(); }
             set { SetValue(value); }
+        }
+
+        private async void NavigateToProduct(Product product)
+        {
+            await _navi.ShowProduct(product);
         }
     }
 }

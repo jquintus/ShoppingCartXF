@@ -1,5 +1,6 @@
 ﻿using ShoppingCart.Async;
 using ShoppingCart.Models;
+using ShoppingCart.Services;
 using System.Windows.Input;
 using Xamarin.Forms;
 
@@ -9,11 +10,12 @@ namespace ShoppingCart.ViewModels
     {
         private const string _resource = "ShoppingCart.Resources.placeholderImageSmall.png";
 
-        public ProductViewModel(Product product, ICommand navigateToProduct)
+        public ProductViewModel(Product product)
         {
             Product = product;
             IconSource = AsyncImageSource.FromUriAndResource(product.IconUrl, _resource);
-            NavigateToProduct = navigateToProduct;
+            NavigateToProduct = new Command(() => MessagingCenter.Send(Product, Messages.NavigateTo));
+
         }
 
         public NotifyTaskCompletion<ImageSource> IconSource { get; private set; }

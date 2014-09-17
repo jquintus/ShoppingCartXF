@@ -19,14 +19,21 @@ namespace ShoppingCart
 
         public static Color AccentColor { get; private set; }
 
-        public static Page GetProductPage(Product product)
+        public static Page StartupPage
         {
-            var vm = new ProductViewModel(product, ProductsListViewModel.NavigateToProduct);
-            return GetProductPage(vm);
+            get { return _firstPage; }
+            set
+            {
+                _firstPage = new NavigationPage(value);
+                NaviService.Navi = StartupPage.Navigation;
+                NaviService.myPage = StartupPage;
+            }
         }
 
-        public static Page GetProductPage(ProductViewModel productViewModel)
+        public static Page GetProductPage(Product product)
         {
+            var productViewModel = new ProductViewModel(product);
+
             ProductViewModel = productViewModel;
             return new ProductPage();
         }
@@ -35,8 +42,7 @@ namespace ShoppingCart
         {
             if (string.IsNullOrWhiteSpace(title)) title = "Products";
 
-            var cmd = ProductsListViewModel.NavigateToProduct;
-            ProductsListViewModel.Products = products.Select(p => new ProductViewModel(p, cmd)).ToList();
+            ProductsListViewModel.Products = products.Select(p => new ProductViewModel(p)).ToList();
             ProductsListViewModel.Title = title;
             return new ProductsListPage();
         }
@@ -47,13 +53,9 @@ namespace ShoppingCart
 
             NaviService = Resolve<INavigationService>() as NavigationService;
             AccentColor = Resolve<IThemer>().AccentColor;
+            var pageFactory = Resolve<IPageFactory>();
 
-            WelcomePage = new WelcomePage();
-            LoginPage = new LoginPage();
-            CategoriesListPage = new CategoriesListPage();
-
-            // Startup Page
-            StartupPage = WelcomePage;
+            StartupPage = pageFactory.GetPage(Pages.Welcome);
         }
 
         #region View Models
@@ -67,27 +69,6 @@ namespace ShoppingCart
         public static ProductViewModel ProductViewModel { get; private set; }
 
         public static WelcomeViewModel WelcomeViewModel { get { return Resolve<WelcomeViewModel>(); } }
-
-        #endregion
-
-        #region Pages
-
-        public static Page CategoriesListPage { get; set; }
-
-        public static Page LoginPage { get; private set; }
-
-        public static Page StartupPage
-        {
-            get { return _firstPage; }
-            set
-            {
-                _firstPage = new NavigationPage(value);
-                NaviService.Navi = StartupPage.Navigation;
-                NaviService.myPage = StartupPage;
-            }
-        }
-
-        public static Page WelcomePage { get; private set; }
 
         #endregion
 

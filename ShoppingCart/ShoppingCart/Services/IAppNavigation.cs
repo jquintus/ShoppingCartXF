@@ -7,5 +7,11 @@ namespace ShoppingCart.Services
     public interface IAppNavigation
     {
         Task ShowProductList(List<Product> items, string title, bool canShowSinglePage = false);
+
+        Task ShowProduct(Product product);
+
+        Task ShowLogin();
+
+        Task LoggedIn(bool result);
     }
 }
