@@ -35,6 +35,7 @@ namespace ShoppingCart.ViewModels
 
         private async Task<int> GoToFirstPage()
         {
+            await Task.Delay(TimeSpan.FromSeconds(2));  // This is just here so I can get a video of this at startup.
             await _slim.WaitAsync();
             await _navi.ShowLogin();
             return 0;
