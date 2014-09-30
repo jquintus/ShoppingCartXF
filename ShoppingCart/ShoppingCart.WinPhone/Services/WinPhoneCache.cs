@@ -15,9 +15,20 @@ namespace ShoppingCart.WinPhone.Services
             _settings = IsolatedStorageSettings.ApplicationSettings;
         }
 
+        public Task Clear(string key)
+        {
+            if (_settings.Contains(key))
+            {
+                _settings.Remove(key);
+                _settings.Save();
+            }
+
+            return Task.FromResult(0);
+        }
+
         public Task<T> GetObject<T>(string key)
         {
-            if (!_settings.Contains(key))
+            if (_settings.Contains(key))
             {
                 return Task.FromResult((T)_settings[key]);
             }
@@ -29,13 +40,13 @@ namespace ShoppingCart.WinPhone.Services
 
         public Task InsertObject<T>(string key, T value)
         {
-            if (!_settings.Contains(key))
+            if (_settings.Contains(key))
             {
-                _settings.Add(key, value);
+                _settings[key] = value;
             }
             else
             {
-                _settings[key] = value;
+                _settings.Add(key, value);
             }
             _settings.Save();
 

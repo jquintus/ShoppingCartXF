@@ -1,5 +1,6 @@
 ﻿using GalaSoft.MvvmLight.Command;
 using ShoppingCart.Async;
+using ShoppingCart.Commands;
 using ShoppingCart.Models;
 using ShoppingCart.Services;
 using System.Collections.Generic;
@@ -12,16 +13,18 @@ namespace ShoppingCart.ViewModels
 {
     public class CategoriesListViewModel : BaseViewModel
     {
+        private readonly LogOutCommand _logOut;
         private readonly IAppNavigation _navi;
         private readonly IScanner _scanner;
         private readonly RelayCommand _searchCommand;
         private readonly IProductService _service;
 
-        public CategoriesListViewModel(IProductService service, IAppNavigation navi, IScanner scanner)
+        public CategoriesListViewModel(IProductService service, IAppNavigation navi, IScanner scanner, LogOutCommand logOut)
         {
             _service = service;
             _navi = navi;
             _scanner = scanner;
+            _logOut = logOut;
 
             MessagingCenter.Subscribe<Category>(this, Messages.NavigateTo, NavigateToCategory);
 
@@ -38,6 +41,8 @@ namespace ShoppingCart.ViewModels
         }
 
         public NotifyTaskCompletion<List<CategoryViewModel>> Categories { get; private set; }
+
+        public ICommand LogOut { get { return _logOut; } }
 
         public ICommand ScanCommand { get; private set; }
 

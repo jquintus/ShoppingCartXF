@@ -1,13 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace ShoppingCart.Services
 {
     public interface ICache
     {
+        Task Clear(string key);
+
         Task<T> GetObject<T>(string key);
 
         Task InsertObject<T>(string key, T value);
@@ -22,17 +22,23 @@ namespace ShoppingCart.Services
             _logger = logger;
         }
 
+        public async Task Clear(string key)
+        {
+            _logger.Info("CLEARING OBJECT {0}", key);
+            await Task.FromResult(0);
+        }
+
         public async Task<T> GetObject<T>(string key)
         {
             await Task.FromResult(0);
-            _logger.Info("XXXXXXXXXXXXXXXXXXXXXXXXX GETTING OBJECT {0}", key);
+            _logger.Info("GETTING OBJECT {0}", key);
 
             return default(T);
         }
 
         public async Task InsertObject<T>(string key, T value)
         {
-            _logger.Info("XXXXXXXXXXXXXXXXXXXXXXXXX INSERTING OBJECT {0}", key);
+            _logger.Info("INSERTING OBJECT {0}", key);
 
             await Task.FromResult(0);
         }

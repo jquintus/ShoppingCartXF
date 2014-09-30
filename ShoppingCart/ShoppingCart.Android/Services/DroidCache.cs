@@ -15,6 +15,11 @@ namespace ShoppingCart.Droid.Services
             BlobCache.ApplicationName = "ShoppingCart.Droid";
         }
 
+        public async Task Clear(string key)
+        {
+            await BlobCache.LocalMachine.Invalidate(key);
+        }
+
         public async Task<T> GetObject<T>(string key)
         {
             try

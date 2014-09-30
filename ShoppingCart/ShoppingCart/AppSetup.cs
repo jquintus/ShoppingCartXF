@@ -1,4 +1,5 @@
 ﻿using Autofac;
+using ShoppingCart.Commands;
 using ShoppingCart.Services;
 using ShoppingCart.ViewModels;
 using Xamarin.Forms;
@@ -34,6 +35,9 @@ namespace ShoppingCart
             cb.RegisterType<AppNavigation>().As<IAppNavigation>().SingleInstance();
             cb.RegisterType<PageFactory>().As<IPageFactory>().SingleInstance();
             cb.RegisterType<MockCache>().As<ICache>().SingleInstance();
+
+            // Commands
+            cb.RegisterType<LogOutCommand>().As<LogOutCommand>().SingleInstance();
 
             // View Models
             cb.RegisterType<CategoriesListViewModel>().SingleInstance();

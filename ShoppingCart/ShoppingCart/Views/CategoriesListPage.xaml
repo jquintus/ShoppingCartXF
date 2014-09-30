@@ -7,6 +7,15 @@
              BindingContext="{x:Static local:App.CategoriesListViewModel}"
              BackgroundColor="White">
 
+  <ContentPage.ToolbarItems>
+    <ToolbarItem Name="Log Out" Command="{Binding LogOut}"  Order="Primary" Priority="0" >
+      <ToolbarItem.Icon>
+        <OnPlatform x:TypeArguments="FileImageSource"
+          WinPhone="Assets/Logout.png" />
+      </ToolbarItem.Icon>
+    </ToolbarItem>
+  </ContentPage.ToolbarItems>
+
   <StackLayout VerticalOptions="FillAndExpand" Padding="50">
     <StackLayout VerticalOptions="FillAndExpand" Orientation="Horizontal">
       <Entry Text="{Binding SearchTerm}"
@@ -38,7 +47,7 @@
                     Detail="{Binding Count}">
             <b:Interaction.Behaviors>
               <b:BehaviorCollection>
-                <b:EventToCommand EventName="Tapped"
+                <local:EventToCommand EventName="Tapped"
                                   Command="{Binding NavigateToCategory}"
                                   CommandParameter="{Binding Category}" />
               </b:BehaviorCollection>

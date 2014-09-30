@@ -17,7 +17,7 @@ namespace ShoppingCart.Services
             var t = _cache.GetObject<User>("LOGIN");
             t.Wait();
             var user = t.Result;
-            return user == null;
+            return user != null;
         }
 
         public async Task<User> LoginAsync(string username, string password)
@@ -27,6 +27,11 @@ namespace ShoppingCart.Services
             await _cache.InsertObject("LOGIN", u);
 
             return u;
+        }
+
+        public async Task LogOutAsync()
+        {
+            await _cache.Clear("LOGIN");
         }
 
         private static User Login(string username, string password)
