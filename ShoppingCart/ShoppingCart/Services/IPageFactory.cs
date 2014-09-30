@@ -12,5 +12,6 @@ namespace ShoppingCart.Services
     public interface IPageFactory
     {
         Page GetPage(Pages page);
+        Page GetStartPage();
     }
 }

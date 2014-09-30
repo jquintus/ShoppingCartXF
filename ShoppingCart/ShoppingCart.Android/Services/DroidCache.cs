@@ -1,6 +1,7 @@
 using Akavache;
 using ShoppingCart.Services;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Reactive.Linq;
 using System.Threading.Tasks;
@@ -16,7 +17,14 @@ namespace ShoppingCart.Droid.Services
 
         public async Task<T> GetObject<T>(string key)
         {
-            return await BlobCache.LocalMachine.GetObject<T>(key);
+            try
+            {
+                return await BlobCache.LocalMachine.GetObject<T>(key);
+            }
+            catch (KeyNotFoundException)
+            {
+                return default(T);
+            }
         }
 
         public async Task InsertObject<T>(string key, T value)

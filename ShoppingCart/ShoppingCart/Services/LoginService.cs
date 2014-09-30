@@ -3,8 +3,6 @@ using System.Threading.Tasks;
 
 namespace ShoppingCart.Services
 {
-
-
     public class LoginService : ILoginService
     {
         private readonly ICache _cache;
@@ -12,6 +10,14 @@ namespace ShoppingCart.Services
         public LoginService(ICache cache)
         {
             _cache = cache;
+        }
+
+        public bool IsLoggedIn()
+        {
+            var t = _cache.GetObject<User>("LOGIN");
+            t.Wait();
+            var user = t.Result;
+            return user == null;
         }
 
         public async Task<User> LoginAsync(string username, string password)
