@@ -567,6 +567,10 @@
     <AndroidResource Include="Resources\values-v11\styles_apptheme.xml" />
     <AndroidResource Include="Resources\values-v11\themes_apptheme.xml" />
     <AndroidResource Include="Resources\values-v9\themes_apptheme.xml" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_action_logout.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_action_logout.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_action_logout.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_action_logout.png" />
   </ItemGroup>
   <ItemGroup>
     <XamarinComponentReference Include="zxing.net.mobile">

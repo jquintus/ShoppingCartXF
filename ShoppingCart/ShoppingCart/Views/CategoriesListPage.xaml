@@ -11,7 +11,8 @@
     <ToolbarItem Name="Log Out" Command="{Binding LogOut}"  Order="Primary" Priority="0" >
       <ToolbarItem.Icon>
         <OnPlatform x:TypeArguments="FileImageSource"
-          WinPhone="Assets/Logout.png" />
+                    WinPhone="Assets/Logout.png"
+                    Android="ic_action_logout.png" />
       </ToolbarItem.Icon>
     </ToolbarItem>
   </ContentPage.ToolbarItems>

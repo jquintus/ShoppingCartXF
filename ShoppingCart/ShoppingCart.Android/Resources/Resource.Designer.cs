@@ -444,7 +444,10 @@ namespace ShoppingCart.Droid
 			public const int apptheme_textfield_focused_holo_light = 2130837624;
 			
 			// aapt resource value: 0x7f020079
-			public const int Icon = 2130837625;
+			public const int ic_action_logout = 2130837625;
+			
+			// aapt resource value: 0x7f02007a
+			public const int Icon = 2130837626;
 			
 			static Drawable()
 			{
