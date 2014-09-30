@@ -1,20 +1,39 @@
-﻿using System.Threading.Tasks;
+﻿using ShoppingCart.Models;
+using System.Threading.Tasks;
 
 namespace ShoppingCart.Services
 {
+    public interface ICache
+    {
+        Task<T> GetObject<T>(string key);
+
+        Task InsertObject<T>(string key, T value);
+    }
+
     public class LoginService : ILoginService
     {
-        public Task<bool> LoginAsync(string username, string password)
+        private readonly ICache _cache;
+
+        public LoginService(ICache cache)
         {
-            return Task.FromResult(Login(username, password));
+            _cache = cache;
         }
 
-        private static bool Login(string username, string password)
+        public async Task<User> LoginAsync(string username, string password)
         {
-            if (string.IsNullOrWhiteSpace(username)) return false;
-            if (username.Contains("fake")) return false;
+            var u = Login(username, password);
 
-            return true;
+            await _cache.InsertObject("LOGIN", u);
+
+            return u;
+        }
+
+        private static User Login(string username, string password)
+        {
+            if (string.IsNullOrWhiteSpace(username)) return null;
+            if (username.Contains("fake")) return null;
+
+            return new User { Name = username, Password = password };
         }
     }
 }

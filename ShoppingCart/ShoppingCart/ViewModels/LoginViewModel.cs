@@ -31,9 +31,9 @@ namespace ShoppingCart.ViewModels
 
         private async void Login()
         {
-            bool result = await _loginService.LoginAsync(Username, Password);
+            var result = await _loginService.LoginAsync(Username, Password);
 
-            await _navigationService.LoggedIn(result);
+            await _navigationService.LoggedIn(result != null);
 
         }
     }

@@ -13,6 +13,8 @@ namespace ShoppingCart.Droid
             cb.RegisterType<DroidLogger>().As<ILogger>().SingleInstance();
             cb.RegisterType<DroidScanner>().As<IScanner>().SingleInstance();
             cb.RegisterType<DroidThemer>().As<IThemer>().SingleInstance();
+
+            cb.RegisterType<FakeDroidCache>().As<ICache>().SingleInstance();
         }
     }
 }
