@@ -8,15 +8,13 @@ namespace ShoppingCart.Commands
     public class LogOutCommand : ICommand
     {
         private readonly ILoginService _login;
-        private readonly INavigationService _navi;
-        private readonly IPageFactory _pageFactory;
+        private readonly IAppNavigation _navi;
         private bool _canExecute;
 
-        public LogOutCommand(ILoginService login, INavigationService navi, IPageFactory pageFactory)
+        public LogOutCommand(ILoginService login, IAppNavigation navi)
         {
             _login = login;
             _navi = navi;
-            _pageFactory = pageFactory;
             _canExecute = true;
         }
 
@@ -35,8 +33,7 @@ namespace ShoppingCart.Commands
                 CanExecuteChanged(this, EventArgs.Empty);
 
                 await _login.LogOutAsync();
-                var page = _pageFactory.GetStartPage();
-                await _navi.PushAsync(page);
+                await _navi.ShowLogin();
             }
             finally
             {

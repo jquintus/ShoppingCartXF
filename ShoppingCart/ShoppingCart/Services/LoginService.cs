@@ -12,11 +12,9 @@ namespace ShoppingCart.Services
             _cache = cache;
         }
 
-        public bool IsLoggedIn()
+        public async Task<bool> IsLoggedIn()
         {
-            var t = _cache.GetObject<User>("LOGIN");
-            t.Wait();
-            var user = t.Result;
+            var user = await _cache.GetObject<User>("LOGIN");
             return user != null;
         }
 

@@ -55,7 +55,7 @@ namespace ShoppingCart
             AccentColor = Resolve<IThemer>().AccentColor;
             var pageFactory = Resolve<IPageFactory>();
 
-            StartupPage = pageFactory.GetStartPage();
+            StartupPage = pageFactory.GetPage(Pages.Welcome);
         }
 
         #region View Models

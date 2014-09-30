@@ -4,19 +4,26 @@
              x:Class="ShoppingCart.Views.WelcomePage"
              xmlns:local="clr-namespace:ShoppingCart;assembly=ShoppingCart"
              BindingContext="{x:Static local:App.WelcomeViewModel}"
-             BackgroundColor="White" >
+             BackgroundColor="White">
 
-  <StackLayout
-    VerticalOptions="Center">
+  <StackLayout VerticalOptions="Center"
+               IsVisible="{Binding IsLoaded, Mode=OneWayToSource}">
     <Frame>
-      <Label Text="Welcome to The Store" Font="Bold, Large" HorizontalOptions="Center" TextColor="{x:Static local:App.AccentColor}" />
+      <Label Text="Welcome to The Store"
+             Font="Bold, Large"
+             HorizontalOptions="Center"
+             TextColor="{x:Static local:App.AccentColor}" />
     </Frame>
 
-    <Label Text="Login to start shopping" HorizontalOptions="Center" />
-
-    <Frame>
-
-      <Button Text ="Log In" Command="{Binding GoToLoginPageCommand}" HorizontalOptions="Center" />
-    </Frame>
+    <ActivityIndicator IsRunning="{Binding IsBusy.IsNotCompleted}"
+                       HorizontalOptions="FillAndExpand"
+                       VerticalOptions="FillAndExpand">
+      <ActivityIndicator.Color>
+        <OnPlatform x:TypeArguments="Color"
+                    iOS="Accent"
+                    WinPhone="Accent"
+                    Android="#afcca6" />
+      </ActivityIndicator.Color>
+    </ActivityIndicator>
   </StackLayout>
 </ContentPage>

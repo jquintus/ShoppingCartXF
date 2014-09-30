@@ -1,22 +1,43 @@
-﻿using ShoppingCart.Mvvm;
+﻿using ShoppingCart.Async;
 using ShoppingCart.Services;
-using System.Windows.Input;
-using Xamarin.Forms;
+using System;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace ShoppingCart.ViewModels
 {
-    public class WelcomeViewModel
+    public class WelcomeViewModel : BaseViewModel
     {
         private readonly IAppNavigation _navi;
+        private SemaphoreSlim _slim;
 
         public WelcomeViewModel(IAppNavigation navi)
         {
             _navi = navi;
+            _slim = new SemaphoreSlim(0, 1);
+            IsBusy = new NotifyTaskCompletion<int>(GoToFirstPage());
         }
 
-        public ICommand GoToLoginPageCommand
+        public NotifyTaskCompletion<int> IsBusy { get; private set; }
+
+        public bool IsLoaded
         {
-            get { return new SimpleCommand(() => _navi.ShowLogin()); }
+            get { return GetValue<bool>(); }
+            set
+            {
+                SetValue(value);
+                if (value)
+                {
+                    _slim.Release();
+                }
+            }
+        }
+
+        private async Task<int> GoToFirstPage()
+        {
+            await _slim.WaitAsync();
+            await _navi.ShowLogin();
+            return 0;
         }
     }
 }

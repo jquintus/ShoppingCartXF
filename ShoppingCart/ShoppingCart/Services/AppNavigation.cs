@@ -7,13 +7,15 @@ namespace ShoppingCart.Services
 {
     public class AppNavigation : IAppNavigation
     {
+        private readonly ILoginService _login;
         private readonly INavigationService _navi;
         private readonly IPageFactory _pages;
 
-        public AppNavigation(INavigationService navi, IPageFactory pages)
+        public AppNavigation(INavigationService navi, IPageFactory pages, ILoginService login)
         {
             _navi = navi;
             _pages = pages;
+            _login = login;
         }
 
         public async Task LoggedIn(bool result)
@@ -30,7 +32,9 @@ namespace ShoppingCart.Services
 
         public async Task ShowLogin()
         {
-            await _navi.PushAsync(_pages.GetPage(Pages.Login));
+            var isLoggedIn = await _login.IsLoggedIn();
+            Page firstPage = isLoggedIn ? _pages.GetPage(Pages.Categories) : _pages.GetPage(Pages.Login);
+            await _navi.PushAsync(firstPage);
         }
 
         public async Task ShowProduct(Models.Product product)

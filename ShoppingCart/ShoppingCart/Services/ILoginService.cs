@@ -5,9 +5,9 @@ namespace ShoppingCart.Services
 {
     public interface ILoginService
     {
-        Task<User> LoginAsync(string username, string password);
+        Task<bool> IsLoggedIn();
 
-        bool IsLoggedIn();
+        Task<User> LoginAsync(string username, string password);
 
         Task LogOutAsync();
     }

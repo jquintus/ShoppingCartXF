@@ -8,7 +8,7 @@
              BackgroundColor="White">
 
   <ContentPage.ToolbarItems>
-    <ToolbarItem Name="Log Out" Command="{Binding LogOut}"  Order="Primary" Priority="0" >
+    <ToolbarItem Name="Log Out" Command="{Binding LogOut}"  Order="Primary" Priority="0">
       <ToolbarItem.Icon>
         <OnPlatform x:TypeArguments="FileImageSource"
                     WinPhone="Assets/Logout.png"
@@ -48,7 +48,7 @@
                     Detail="{Binding Count}">
             <b:Interaction.Behaviors>
               <b:BehaviorCollection>
-                <local:EventToCommand EventName="Tapped"
+                <b:EventToCommand EventName="Tapped"
                                   Command="{Binding NavigateToCategory}"
                                   CommandParameter="{Binding Category}" />
               </b:BehaviorCollection>
