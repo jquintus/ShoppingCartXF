@@ -3,12 +3,7 @@ using System.Threading.Tasks;
 
 namespace ShoppingCart.Services
 {
-    public interface ICache
-    {
-        Task<T> GetObject<T>(string key);
 
-        Task InsertObject<T>(string key, T value);
-    }
 
     public class LoginService : ILoginService
     {
