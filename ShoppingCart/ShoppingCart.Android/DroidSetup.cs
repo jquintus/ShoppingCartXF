@@ -14,7 +14,10 @@ namespace ShoppingCart.Droid
             cb.RegisterType<DroidScanner>().As<IScanner>().SingleInstance();
             cb.RegisterType<DroidThemer>().As<IThemer>().SingleInstance();
 
-            cb.RegisterType<FakeDroidCache>().As<ICache>().SingleInstance();
+            cb.RegisterType<DroidCache>().As<ICache>().SingleInstance();
+
+
+
         }
     }
 }
