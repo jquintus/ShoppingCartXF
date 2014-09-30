@@ -107,6 +107,7 @@
     <Compile Include="SamplePage.xaml.cs">
       <DependentUpon>SamplePage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Services\WinPhoneCache.cs" />
     <Compile Include="Services\WinPhoneLogger.cs" />
     <Compile Include="Services\WinPhoneScanner.cs" />
     <Compile Include="Services\WinPhoneThemer.cs" />
