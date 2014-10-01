@@ -1,21 +1,17 @@
-using Akavache;
-using ShoppingCart.Services;
+﻿using Akavache;
+using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Reactive.Linq;
 using System.Threading.Tasks;
 
-namespace ShoppingCart.Droid.Services
+namespace ShoppingCart.Services
 {
-    public class DroidCache : ICache
+    public class Cache : ICache
     {
-        public DroidCache()
+        public Cache()
         {
-            BlobCache.ApplicationName = "ShoppingCart.Droid";
-        }
-
-        public async Task RemoveObject(string key)
-        {
-            await BlobCache.LocalMachine.Invalidate(key);
+            BlobCache.ApplicationName = "ShoppingCart";
         }
 
         public async Task<T> GetObject<T>(string key)
@@ -33,6 +29,11 @@ namespace ShoppingCart.Droid.Services
         public async Task InsertObject<T>(string key, T value)
         {
             await BlobCache.LocalMachine.InsertObject(key, value);
+        }
+
+        public async Task RemoveObject(string key)
+        {
+            await BlobCache.LocalMachine.Invalidate(key);
         }
     }
 }
