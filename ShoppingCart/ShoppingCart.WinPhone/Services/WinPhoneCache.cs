@@ -15,42 +15,49 @@ namespace ShoppingCart.WinPhone.Services
             _settings = IsolatedStorageSettings.ApplicationSettings;
         }
 
-        public Task Clear(string key)
+        public async Task RemoveObject(string key)
         {
-            if (_settings.Contains(key))
+            await Task.Factory.StartNew(() =>
             {
-                _settings.Remove(key);
+                if (_settings.Contains(key))
+                {
+                    _settings.Remove(key);
+                    _settings.Save();
+                }
+            });
+        }
+
+        public async Task<T> GetObject<T>(string key)
+        {
+            return await Task.Factory.StartNew<T>(() =>
+            {
+                if (_settings.Contains(key))
+                {
+                    return (T)_settings[key];
+                }
+                else
+                {
+                    return default(T);
+                }
+            });
+        }
+
+        public async Task InsertObject<T>(string key, T value)
+        {
+            await Task.Factory.StartNew(() =>
+            {
+                if (_settings.Contains(key))
+                {
+                    _settings[key] = value;
+                }
+                else
+                {
+                    _settings.Add(key, value);
+                }
                 _settings.Save();
-            }
 
-            return Task.FromResult(0);
-        }
-
-        public Task<T> GetObject<T>(string key)
-        {
-            if (_settings.Contains(key))
-            {
-                return Task.FromResult((T)_settings[key]);
-            }
-            else
-            {
-                return Task.FromResult(default(T));
-            }
-        }
-
-        public Task InsertObject<T>(string key, T value)
-        {
-            if (_settings.Contains(key))
-            {
-                _settings[key] = value;
-            }
-            else
-            {
-                _settings.Add(key, value);
-            }
-            _settings.Save();
-
-            return Task.FromResult(0);
+                return Task.FromResult(0);
+            });
         }
     }
 }

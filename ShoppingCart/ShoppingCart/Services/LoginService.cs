@@ -27,17 +27,17 @@ namespace ShoppingCart.Services
             return u;
         }
 
-        public async Task LogOutAsync()
-        {
-            await _cache.Clear("LOGIN");
-        }
-
         private static User Login(string username, string password)
         {
             if (string.IsNullOrWhiteSpace(username)) return null;
             if (username.Contains("fake")) return null;
 
             return new User { Name = username, Password = password };
+        }
+
+        public async Task LogOutAsync()
+        {
+            await _cache.RemoveObject("LOGIN");
         }
     }
 }

@@ -6,11 +6,11 @@ namespace ShoppingCart.Services
 {
     public interface ICache
     {
-        Task Clear(string key);
-
         Task<T> GetObject<T>(string key);
 
         Task InsertObject<T>(string key, T value);
+
+        Task RemoveObject(string key);
     }
 
     public class MockCache : ICache
@@ -20,12 +20,6 @@ namespace ShoppingCart.Services
         public MockCache(ILogger logger)
         {
             _logger = logger;
-        }
-
-        public async Task Clear(string key)
-        {
-            _logger.Info("CLEARING OBJECT {0}", key);
-            await Task.FromResult(0);
         }
 
         public async Task<T> GetObject<T>(string key)
@@ -40,6 +34,12 @@ namespace ShoppingCart.Services
         {
             _logger.Info("INSERTING OBJECT {0}", key);
 
+            await Task.FromResult(0);
+        }
+
+        public async Task RemoveObject(string key)
+        {
+            _logger.Info("REMOVING OBJECT {0}", key);
             await Task.FromResult(0);
         }
     }

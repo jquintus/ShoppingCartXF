@@ -1,8 +1,6 @@
 using Akavache;
 using ShoppingCart.Services;
-using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Reactive.Linq;
 using System.Threading.Tasks;
 
@@ -15,7 +13,7 @@ namespace ShoppingCart.Droid.Services
             BlobCache.ApplicationName = "ShoppingCart.Droid";
         }
 
-        public async Task Clear(string key)
+        public async Task RemoveObject(string key)
         {
             await BlobCache.LocalMachine.Invalidate(key);
         }
