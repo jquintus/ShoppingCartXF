@@ -9,6 +9,7 @@ Sample code for a shopping cart app using Xamarin Forms.  There is a series of b
  - Day 6:  Styling ([blog][13] / [code][14])
  - Day 7:  Behaviors ([blog][15] / [code][16])
  - Day 8:  Akavache ([blog][17] / [code][18])
+ - Day 9:  App and Action Bars ([blog][19] / [code][20])
 
   [1]: http://blog.masterdevs.com/xamarin-forms-shopping-cart-day-0/
   [2]: https://github.com/jquintus/spikes/blob/master/XamarinSpikes/ShoppingCart/Archive/ShoppingCart-Day0.zip?raw=true
@@ -28,4 +29,5 @@ Sample code for a shopping cart app using Xamarin Forms.  There is a series of b
   [16]: https://github.com/jquintus/spikes/tree/ShoppingCart-Day7/XamarinSpikes/ShoppingCart
   [17]: http://blog.masterdevs.com/xf-day-8/
   [18]: https://github.com/jquintus/spikes/tree/ShoppingCart-Day8/XamarinSpikes/ShoppingCart
-
+  [19]: http://blog.masterdevs.com/xf-day-9/
+  [20]: https://github.com/jquintus/spikes/tree/ShoppingCart-Day9/XamarinSpikes/ShoppingCart
