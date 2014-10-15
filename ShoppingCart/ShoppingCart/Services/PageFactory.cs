@@ -13,6 +13,7 @@ namespace ShoppingCart.Services
                 case Pages.Login: return new LoginPage();
                 case Pages.Welcome: return new WelcomePage();
                 case Pages.Categories: return new CategoriesListPage();
+                case Pages.About: return new AboutPage();
                 default: throw new ArgumentException(string.Format("Unknown page type {0}", page));
             }
         }

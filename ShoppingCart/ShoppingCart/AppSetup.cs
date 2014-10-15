@@ -46,6 +46,7 @@ namespace ShoppingCart
             cb.RegisterType<ProductsListViewModel>().SingleInstance();
             cb.RegisterType<ProductViewModel>().SingleInstance();
             cb.RegisterType<WelcomeViewModel>().SingleInstance();
+            cb.RegisterType<AboutViewModel>().SingleInstance();
         }
     }
 }

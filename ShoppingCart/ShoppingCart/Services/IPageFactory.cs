@@ -7,6 +7,7 @@ namespace ShoppingCart.Services
         Login,
         Welcome,
         Categories,
+        About,
     }
 
     public interface IPageFactory

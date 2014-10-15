@@ -59,6 +59,7 @@ namespace ShoppingCart
         }
 
         #region View Models
+        public static AboutViewModel AboutViewModel { get { return Resolve<AboutViewModel>(); } }
 
         public static CategoriesListViewModel CategoriesListViewModel { get { return Resolve<CategoriesListViewModel>(); } }
 
