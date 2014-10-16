@@ -6,7 +6,6 @@ using Xamarin.Forms;
 [assembly: ExportRenderer(typeof(ShoppingCart.Views.AboutPage), typeof(ShoppingCart.WinPhone.Views.AboutPageRenderer))]
 namespace ShoppingCart.WinPhone
 {
-
     public class WinPhoneSetup : AppSetup
     {
         protected override void RegisterDepenencies(ContainerBuilder cb)

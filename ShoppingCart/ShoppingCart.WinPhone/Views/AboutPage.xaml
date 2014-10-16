@@ -42,11 +42,11 @@
 
             <Button Grid.Row="1" Content="Browse Source Code"
                     Command="{Binding OpenUrlCommand}"
-                    CommandParameter="https://github.com/jquintus/spikes/tree/master/XamarinSpikes/ShoppingCart" />
+                    CommandParameter="{Binding CodeUrl}" />
 
             <Button Grid.Row="3" Content="Read Blog"
                     Command="{Binding OpenUrlCommand}"
-                    CommandParameter="http://blog.masterdevs.com/xf-day-9/" />
+                    CommandParameter="{Binding BlogUrl}" />
         </Grid>
     </Grid>
 </phone:PhoneApplicationPage>
