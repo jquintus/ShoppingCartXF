@@ -3,7 +3,7 @@ using System.Linq;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.WinPhone;
 
-namespace ShoppingCart.WinPhone.Pages
+namespace ShoppingCart.WinPhone.Views
 {
     public class AboutPageRenderer : VisualElementRenderer<Xamarin.Forms.Page, Microsoft.Phone.Controls.PhoneApplicationPage>
     {

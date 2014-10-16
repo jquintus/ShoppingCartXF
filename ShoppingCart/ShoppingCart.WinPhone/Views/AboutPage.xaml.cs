@@ -2,9 +2,8 @@
 using System;
 using System.Linq;
 
-namespace ShoppingCart.WinPhone.Pages
+namespace ShoppingCart.WinPhone.Views
 {
-
     public partial class AboutPage : PhoneApplicationPage
     {
         public AboutPage()
