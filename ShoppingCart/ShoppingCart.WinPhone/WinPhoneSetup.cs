@@ -1,9 +1,12 @@
 ﻿using Autofac;
 using ShoppingCart.Services;
 using ShoppingCart.WinPhone.Services;
+using Xamarin.Forms;
 
+[assembly: ExportRenderer(typeof(ShoppingCart.Views.AboutPage), typeof(ShoppingCart.WinPhone.Pages.AboutPageRenderer))]
 namespace ShoppingCart.WinPhone
 {
+
     public class WinPhoneSetup : AppSetup
     {
         protected override void RegisterDepenencies(ContainerBuilder cb)

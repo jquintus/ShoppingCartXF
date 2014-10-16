@@ -1,5 +1,4 @@
-﻿using GalaSoft.MvvmLight.Command;
-using ShoppingCart.Async;
+﻿using ShoppingCart.Async;
 using ShoppingCart.Commands;
 using ShoppingCart.Models;
 using ShoppingCart.Services;
@@ -16,7 +15,7 @@ namespace ShoppingCart.ViewModels
         private readonly LogOutCommand _logOut;
         private readonly IAppNavigation _navi;
         private readonly IScanner _scanner;
-        private readonly RelayCommand _searchCommand;
+        private readonly Command _searchCommand;
         private readonly IProductService _service;
 
         public CategoriesListViewModel(IProductService service, IAppNavigation navi, IScanner scanner, LogOutCommand logOut)
@@ -28,14 +27,16 @@ namespace ShoppingCart.ViewModels
 
             MessagingCenter.Subscribe<Category>(this, Messages.NavigateTo, NavigateToCategory);
 
-            _searchCommand = new RelayCommand(Search, () => !string.IsNullOrWhiteSpace(SearchTerm));
-            ScanCommand = new RelayCommand(async () =>
+            _searchCommand = new Command(Search, () => !string.IsNullOrWhiteSpace(SearchTerm));
+            ScanCommand = new Command(async () =>
             {
                 var result = await _scanner.Scan();
 
                 SearchTerm = result.Text;
                 Search();
             });
+
+            AboutCommand = new Command(async () => await _navi.ShowAbout());
 
             Categories = new NotifyTaskCompletion<List<CategoryViewModel>>(GetCategories());
         }
@@ -48,13 +49,15 @@ namespace ShoppingCart.ViewModels
 
         public ICommand SearchCommand { get { return _searchCommand; } }
 
+        public ICommand AboutCommand { get; private set; }
+
         public string SearchTerm
         {
             get { return GetValue<string>(); }
             set
             {
                 SetValue(value);
-                _searchCommand.RaiseCanExecuteChanged();
+                _searchCommand.ChangeCanExecute();
             }
         }
 

@@ -8,6 +8,8 @@ namespace ShoppingCart.Services
     {
         Task LoggedIn(bool result);
 
+        Task ShowAbout();
+
         Task ShowLogin();
 
         Task ShowProduct(Product product);

@@ -30,6 +30,11 @@ namespace ShoppingCart.Services
             }
         }
 
+        public async Task ShowAbout()
+        {
+            await _navi.PushAsync(_pages.GetPage(Pages.About));
+        }
+
         public async Task ShowLogin()
         {
             var isLoggedIn = await _login.IsLoggedIn();

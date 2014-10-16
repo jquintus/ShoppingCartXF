@@ -15,6 +15,8 @@
                     Android="ic_action_logout.png" />
       </ToolbarItem.Icon>
     </ToolbarItem>
+
+    <ToolbarItem Name="About" Command="{Binding AboutCommand}"  Order="Secondary" Priority="0"/>
   </ContentPage.ToolbarItems>
 
   <StackLayout VerticalOptions="FillAndExpand" Padding="50">
