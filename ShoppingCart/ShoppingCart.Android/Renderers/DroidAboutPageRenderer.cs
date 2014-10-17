@@ -6,9 +6,9 @@ using System;
 using System.Linq;
 using Xamarin.Forms.Platform.Android;
 
-namespace ShoppingCart.Droid.Views
+namespace ShoppingCart.Droid.Renderers
 {
-    public class AboutPageRenderer : PageRenderer
+    public class DroidAboutPageRenderer : PageRenderer
     {
         private Android.Views.View view;
 

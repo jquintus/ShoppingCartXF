@@ -3,7 +3,7 @@ using ShoppingCart.Droid.Services;
 using ShoppingCart.Services;
 using Xamarin.Forms;
 
-[assembly: ExportRenderer(typeof(ShoppingCart.Views.AboutPage), typeof(ShoppingCart.Droid.Views.AboutPageRenderer))]
+[assembly: ExportRenderer(typeof(ShoppingCart.Views.AboutPage), typeof(ShoppingCart.Droid.Renderers.DroidAboutPageRenderer))]
 
 namespace ShoppingCart.Droid
 {

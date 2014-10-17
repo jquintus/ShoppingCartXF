@@ -130,7 +130,7 @@
     <Compile Include="Services\DroidLogger.cs" />
     <Compile Include="Services\DroidScanner.cs" />
     <Compile Include="Services\DroidThemer.cs" />
-    <Compile Include="Views\AboutPageRenderer.cs" />
+    <Compile Include="Renderers\DroidAboutPageRenderer.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

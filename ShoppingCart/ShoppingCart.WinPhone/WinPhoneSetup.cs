@@ -3,7 +3,7 @@ using ShoppingCart.Services;
 using ShoppingCart.WinPhone.Services;
 using Xamarin.Forms;
 
-[assembly: ExportRenderer(typeof(ShoppingCart.Views.AboutPage), typeof(ShoppingCart.WinPhone.Views.AboutPageRenderer))]
+[assembly: ExportRenderer(typeof(ShoppingCart.Views.AboutPage), typeof(ShoppingCart.WinPhone.Views.WinPhoneAboutPageRenderer))]
 namespace ShoppingCart.WinPhone
 {
     public class WinPhoneSetup : AppSetup

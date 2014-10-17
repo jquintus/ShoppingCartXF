@@ -5,12 +5,12 @@ using Xamarin.Forms.Platform.WinPhone;
 
 namespace ShoppingCart.WinPhone.Views
 {
-    public class AboutPageRenderer : VisualElementRenderer<Xamarin.Forms.Page, Microsoft.Phone.Controls.PhoneApplicationPage>
+    public class WinPhoneAboutPageRenderer : VisualElementRenderer<Xamarin.Forms.Page, Microsoft.Phone.Controls.PhoneApplicationPage>
     {
         protected override void OnElementChanged(ElementChangedEventArgs<Page> e)
         {
             base.OnElementChanged(e);
-            SetNativeControl(new AboutPage());
+            SetNativeControl(new WinPhoneAboutPage());
         }
     }
 }

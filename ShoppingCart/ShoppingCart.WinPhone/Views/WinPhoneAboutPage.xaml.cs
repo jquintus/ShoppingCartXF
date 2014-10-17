@@ -4,9 +4,9 @@ using System.Linq;
 
 namespace ShoppingCart.WinPhone.Views
 {
-    public partial class AboutPage : PhoneApplicationPage
+    public partial class WinPhoneAboutPage : PhoneApplicationPage
     {
-        public AboutPage()
+        public WinPhoneAboutPage()
         {
             this.DataContext = ShoppingCart.App.AboutViewModel;
             InitializeComponent();
