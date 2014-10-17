@@ -8,10 +8,13 @@ namespace ShoppingCart.Views
         {
             Title = "About";
 
-            Content = new Label
+            if (Device.OS != TargetPlatform.Android)
             {
-                Text = "This page is not available for your platform",
-            };
+                Content = new Label
+                {
+                    Text = "This page is not available for your platform",
+                };
+            }
         }
     }
 }
