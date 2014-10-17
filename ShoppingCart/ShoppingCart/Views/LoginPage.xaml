@@ -6,6 +6,7 @@
              xmlns:b="clr-namespace:Xamarin.Behaviors;assembly=Xamarin.Behaviors"
              BindingContext="{x:Static local:App.LoginViewModel}"
              x:Class="ShoppingCart.Views.LoginPage"
+             Title="Login"
              BackgroundColor="White">
 
   <StackLayout VerticalOptions="FillAndExpand" Padding="50">

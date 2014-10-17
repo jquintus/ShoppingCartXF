@@ -4,6 +4,7 @@
              x:Class="ShoppingCart.Views.ProductPage"
              xmlns:local="clr-namespace:ShoppingCart;assembly=ShoppingCart"
              BindingContext="{x:Static local:App.ProductViewModel}"
+             Title="{Binding Product.Name}"
              BackgroundColor="White">
 
   <ScrollView>

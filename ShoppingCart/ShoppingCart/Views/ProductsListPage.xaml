@@ -4,6 +4,7 @@
              x:Class="ShoppingCart.Views.ProductsListPage"
              xmlns:local="clr-namespace:ShoppingCart;assembly=ShoppingCart"
              BindingContext="{x:Static local:App.ProductsListViewModel}"
+             Title="{Binding Title}"
              BackgroundColor="White">
 
   <StackLayout VerticalOptions="FillAndExpand" Padding="50">

@@ -5,6 +5,7 @@
              xmlns:local="clr-namespace:ShoppingCart;assembly=ShoppingCart"
              xmlns:b="clr-namespace:Xamarin.Behaviors;assembly=Xamarin.Behaviors"
              BindingContext="{x:Static local:App.CategoriesListViewModel}"
+             Title="Browse"
              BackgroundColor="White">
 
   <ContentPage.ToolbarItems>
@@ -20,10 +21,9 @@
   </ContentPage.ToolbarItems>
 
   <StackLayout VerticalOptions="FillAndExpand" Padding="50">
-    <StackLayout VerticalOptions="FillAndExpand" Orientation="Horizontal">
+    <StackLayout Orientation="Horizontal">
       <Entry Text="{Binding SearchTerm}"
-             Placeholder="Search"
-             HorizontalOptions="FillAndExpand" />
+             Placeholder="Search" />
       <Button Text ="Search"
         Command="{Binding SearchCommand}" />
       <Button Text ="Scan"

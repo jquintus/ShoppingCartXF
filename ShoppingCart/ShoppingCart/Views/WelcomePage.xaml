@@ -4,6 +4,7 @@
              x:Class="ShoppingCart.Views.WelcomePage"
              xmlns:local="clr-namespace:ShoppingCart;assembly=ShoppingCart"
              BindingContext="{x:Static local:App.WelcomeViewModel}"
+             Title="Welcome"
              BackgroundColor="White">
 
   <StackLayout VerticalOptions="Center"

@@ -7,6 +7,11 @@ namespace ShoppingCart.Views
         public AboutPage()
         {
             Title = "About";
+
+            Content = new Label
+            {
+                Text = "This page is not available for your platform",
+            };
         }
     }
 }
