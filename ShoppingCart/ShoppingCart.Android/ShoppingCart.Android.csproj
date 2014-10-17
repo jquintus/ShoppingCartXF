@@ -130,11 +130,15 @@
     <Compile Include="Services\DroidLogger.cs" />
     <Compile Include="Services\DroidScanner.cs" />
     <Compile Include="Services\DroidThemer.cs" />
+    <Compile Include="Views\AboutPageRenderer.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />
+    <AndroidResource Include="Resources\layout\AboutLayout.axml">
+      <SubType>AndroidResource</SubType>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\Drawable\Icon.png" />

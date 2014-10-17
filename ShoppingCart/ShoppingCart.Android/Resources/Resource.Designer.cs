@@ -463,7 +463,13 @@ namespace ShoppingCart.Droid
 		{
 			
 			// aapt resource value: 0x7f080000
-			public const int contentFrame = 2131230720;
+			public const int button_blog = 2131230720;
+			
+			// aapt resource value: 0x7f080001
+			public const int button_code = 2131230721;
+			
+			// aapt resource value: 0x7f080002
+			public const int contentFrame = 2131230722;
 			
 			static Id()
 			{
@@ -479,13 +485,16 @@ namespace ShoppingCart.Droid
 		{
 			
 			// aapt resource value: 0x7f030000
-			public const int apptheme_tab_indicator_holo = 2130903040;
+			public const int AboutLayout = 2130903040;
 			
 			// aapt resource value: 0x7f030001
-			public const int zxingscanneractivitylayout = 2130903041;
+			public const int apptheme_tab_indicator_holo = 2130903041;
 			
 			// aapt resource value: 0x7f030002
-			public const int zxingscannerfragmentlayout = 2130903042;
+			public const int zxingscanneractivitylayout = 2130903042;
+			
+			// aapt resource value: 0x7f030003
+			public const int zxingscannerfragmentlayout = 2130903043;
 			
 			static Layout()
 			{

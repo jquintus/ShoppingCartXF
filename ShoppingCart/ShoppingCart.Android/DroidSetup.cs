@@ -1,6 +1,9 @@
 using Autofac;
 using ShoppingCart.Droid.Services;
 using ShoppingCart.Services;
+using Xamarin.Forms;
+
+[assembly: ExportRenderer(typeof(ShoppingCart.Views.AboutPage), typeof(ShoppingCart.Droid.Views.AboutPageRenderer))]
 
 namespace ShoppingCart.Droid
 {
