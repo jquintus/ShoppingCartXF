@@ -8,6 +8,7 @@ using Xamarin.Forms.Platform.Android;
 
 namespace ShoppingCart.Droid.Renderers
 {
+    // Look at DroidSetup for the registration of this renderer
     public class DroidAboutPageRenderer : PageRenderer
     {
         private Android.Views.View view;
