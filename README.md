@@ -15,23 +15,24 @@ Sample code for a shopping cart app using Xamarin Forms.  There is a series of b
   [1]: http://blog.masterdevs.com/xamarin-forms-shopping-cart-day-0/
   [2]: https://github.com/jquintus/spikes/blob/master/XamarinSpikes/ShoppingCart/Archive/ShoppingCart-Day0.zip?raw=true
   [3]: http://blog.masterdevs.com/xf-day-1/
-  [4]: https://github.com/jquintus/ShoppingCartXF/releases/edit/ShoppingCart-Day1
+  [4]: https://github.com/jquintus/ShoppingCartXF/tree/ShoppingCart-Day1
   [5]: http://blog.masterdevs.com/xf-day-2/
-  [6]: https://github.com/jquintus/ShoppingCartXF/releases/edit/ShoppingCart-Day2
+  [6]: https://github.com/jquintus/ShoppingCartXF/tree/ShoppingCart-Day2
   [7]: http://blog.masterdevs.com/xf-day-3/
-  [8]: https://github.com/jquintus/ShoppingCartXF/releases/edit/ShoppingCart-Day3
+  [8]: https://github.com/jquintus/ShoppingCartXF/tree/ShoppingCart-Day3
   [9]: http://blog.masterdevs.com/xf-day-4/
-  [10]: https://github.com/jquintus/ShoppingCartXF/releases/edit/ShoppingCart-Day4.1
+  [10]: https://github.com/jquintus/ShoppingCartXF/tree/ShoppingCart-Day4.1
   [11]: http://blog.masterdevs.com/xf-day-5/
-  [12]: https://github.com/jquintus/ShoppingCartXF/releases/edit/ShoppingCart-Day5
+  [12]: https://github.com/jquintus/ShoppingCartXF/tree/ShoppingCart-Day5
   [13]: http://blog.masterdevs.com/xf-day-6/
-  [14]: https://github.com/jquintus/ShoppingCartXF/releases/edit/ShoppingCart-Day6
+  [14]: https://github.com/jquintus/ShoppingCartXF/tree/ShoppingCart-Day6
   [15]: http://blog.masterdevs.com/xf-day-7/
-  [16]: https://github.com/jquintus/ShoppingCartXF/releases/edit/ShoppingCart-Day7
+  [16]: https://github.com/jquintus/ShoppingCartXF/tree/ShoppingCart-Day7
   [17]: http://blog.masterdevs.com/xf-day-8/
-  [18]: https://github.com/jquintus/ShoppingCartXF/releases/edit/ShoppingCart-Day8
+  [18]: https://github.com/jquintus/ShoppingCartXF/tree/ShoppingCart-Day8
   [19]: http://blog.masterdevs.com/xf-day-9/
-  [20]: https://github.com/jquintus/ShoppingCartXF/releases/edit/ShoppingCart-Day9
+  [20]: https://github.com/jquintus/ShoppingCartXF/tree/ShoppingCart-Day9
   [21]: http://blog.masterdevs.com/xf-day-10/
-  [22]: https://github.com/jquintus/ShoppingCartXF/releases/edit/ShoppingCart-Day10
+  [22]: https://github.com/jquintus/ShoppingCartXF/tree/ShoppingCart-Day10
+
 
