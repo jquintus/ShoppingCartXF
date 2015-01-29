@@ -13,7 +13,7 @@ Sample code for a shopping cart app using Xamarin Forms.  There is a series of b
  - Day 10:  Native Views ([blog][21] / [code][22])
 
   [1]: http://blog.masterdevs.com/xamarin-forms-shopping-cart-day-0/
-  [2]: https://github.com/jquintus/spikes/blob/master/XamarinSpikes/ShoppingCart/Archive/ShoppingCart-Day0.zip?raw=true
+  [2]: https://github.com/jquintus/ShoppingCartXF/raw/master/Archive/ShoppingCart-Day0.zip
   [3]: http://blog.masterdevs.com/xf-day-1/
   [4]: https://github.com/jquintus/ShoppingCartXF/tree/ShoppingCart-Day1
   [5]: http://blog.masterdevs.com/xf-day-2/
